@@ -1,0 +1,108 @@
+'use client';
+import { motion } from 'framer-motion';
+import { Hero } from '@/components/sections/Hero';
+import { ShopByCategory } from '@/components/sections/ShopByCategory';
+import { FeaturedProducts } from '@/components/sections/FeaturedProducts';
+import { FeatureSection } from '@/components/sections/FeatureSection';
+import { WhyChooseUs } from '@/components/sections/WhyChooseUs';
+import { Testimonials } from '@/components/sections/Testimonials';
+import { Newsletter } from '@/components/sections/Newsletter';
+import { Button } from '@/components/ui/Button';
+import { HiArrowRight } from 'react-icons/hi2';
+import Link from 'next/link';
+
+export default function HomePage() {
+  const sectionVariants = {
+    initial: { opacity: 0, y: 40 },
+    whileInView: { opacity: 1, y: 0 },
+    transition: { duration: 0.8, ease: "easeOut" }
+  };
+
+  return (
+    <main>
+      <Hero />
+      
+      <motion.div {...sectionVariants} viewport={{ once: true }}>
+        <FeatureSection />
+      </motion.div>
+
+      <motion.div {...sectionVariants} viewport={{ once: true }}>
+        <FeaturedProducts />
+      </motion.div>
+
+      <motion.div {...sectionVariants} viewport={{ once: true }}>
+        <ShopByCategory />
+      </motion.div>
+
+      <motion.div {...sectionVariants} viewport={{ once: true }}>
+        <WhyChooseUs />
+      </motion.div>
+
+      <motion.div {...sectionVariants} viewport={{ once: true }}>
+        <Testimonials />
+      </motion.div>
+      
+      {/* CTA Banner */}
+     <motion.section
+  {...sectionVariants}
+  viewport={{ once: true }}
+  className="py-10 bg-background overflow-hidden"
+>
+  <div className="container mx-auto px-4 md:px-6">
+<div className=" rounded-3xl p-10 md:p-20 relative overflow-hidden">
+      
+      {/* Background Shape */}
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/20 -skew-x-12 translate-x-1/4" />
+
+      <div className="relative z-10 grid md:grid-cols-2 items-center gap-10">
+        
+        {/* Left Side Text */}
+        <div className="max-w-2xl space-y-8">
+          <h2 className="text-4xl md:text-5xl font-medium text-white leading-tight">
+            Ready to upgrade your kitchen?
+          </h2>
+
+          <p className="text-muted text-lg">
+            Join over 12,000 home cooks who already shop with LAZAK. Get first dibs on new arrivals, exclusive discounts, and tips that actually help.
+          </p>
+
+          <div className="flex flex-wrap gap-4">
+            <Link href="/products">
+              <Button size="lg" className="gap-2">
+                Explore Collection <HiArrowRight className="w-5 h-5" />
+              </Button>
+            </Link>
+
+            <Link href="/signup">
+              <Button
+                variant="outline"
+                size="lg"
+                className="text-white border-white hover:bg-white hover:text-secondary"
+              >
+                Create Account
+              </Button>
+            </Link>
+          </div>
+        </div>
+
+        {/* Right Side Image */}
+        <div className="flex justify-center md:justify-end">
+          <img
+            src="/kitchen3.png"
+            alt="Kitchen essentials"
+            className="w-[300px] h-[240px] object-cover rounded-2xl shadow-lg"
+          />
+        </div>
+
+      </div>
+    </div>
+  </div>
+</motion.section>
+      
+      <motion.div {...sectionVariants} viewport={{ once: true }}>
+        <Newsletter />
+      </motion.div>
+    </main>
+  );
+}
+
