@@ -2,11 +2,17 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { HiShoppingCart, HiHeart, HiMagnifyingGlass, HiBars3, HiXMark, HiUser } from 'react-icons/hi2';
+import { HiShoppingCart, HiHeart, HiUser, HiBars3, HiXMark } from 'react-icons/hi2';
 import { useStore } from '@/lib/store';
 import { Logo } from '@/components/ui/Logo';
-import { Button } from '@/components/ui/Button';
 import { motion, AnimatePresence } from 'framer-motion';
+
+const NAV_LINKS = [
+  { name: 'Home', path: '/' },
+  { name: 'Products', path: '/products' },
+  { name: 'Blog', path: '/blog' },
+  { name: 'Contact', path: '/contact' },
+];
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -15,93 +21,137 @@ export const Navbar = () => {
   const pathname = usePathname();
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    const handleScroll = () => setIsScrolled(window.scrollY > 10);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   useEffect(() => { setIsMobileMenuOpen(false); }, [pathname]);
 
-  const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'Products', path: '/products' },
-    { name: 'Blog', path: '/blog' },
-    { name: 'Contact', path: '/contact' },
-  ];
-
-  const isHomePage = pathname === '/';
-  const isTransparent = isHomePage && !isScrolled;
   const isAuthPage = pathname === '/login' || pathname === '/signup';
   if (isAuthPage) return null;
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isTransparent ? 'bg-surface shadow-medium' : 'bg-surface shadow-medium'}`}>
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="flex flex-col">
-          <div className="flex items-center justify-between h-20">
+    <header className="fixed top-0 left-0 right-0 z-50">
+      {/* Main navigation */}
+      <nav
+        className={`transition-all duration-300 ${
+          isScrolled
+            ? 'bg-white border-b border-gray-100 shadow-[0_1px_0_rgba(0,0,0,0.06)]'
+            : 'bg-white border-b border-gray-100'
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-6 xl:px-10">
+          <div className="flex items-center justify-between h-16 md:h-[72px]">
+            {/* Logo */}
             <Logo />
-            <div className="hidden lg:flex flex-1 max-w-md lg:max-w-xl mx-4 lg:mx-8">
-              <div className="relative w-full group ">
-                <HiMagnifyingGlass className={`absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-black/60 group-focus-within:text-black`} />
-                <input type="text" placeholder="Search kitchen tools, knives, cookware..." className={`w-full pl-12 pr-4 py-3 border rounded-full focus:outline-none focus:ring-4 transition-all text-sm font-medium bg-muted/5 border-muted/10 focus:bg-white focus:border-primary focus:ring-primary/10`} />
-              </div>
+
+            {/* Center links */}
+            <div className="hidden lg:flex items-center gap-10">
+              {NAV_LINKS.map((link) => (
+                <Link
+                  key={link.path}
+                  href={link.path}
+                  className={`text-[11px] font-black uppercase tracking-[0.18em] transition-colors duration-200 relative group ${
+                    pathname === link.path
+                      ? 'text-[#34B4FF]'
+                      : 'text-[#1A1A1A] hover:text-[#34B4FF]'
+                  }`}
+                >
+                  {link.name}
+                  <span
+                    className={`absolute -bottom-1 left-0 h-[2px] bg-[#34B4FF] transition-all duration-300 ${
+                      pathname === link.path ? 'w-full' : 'w-0 group-hover:w-full'
+                    }`}
+                  />
+                </Link>
+              ))}
             </div>
-            <div className="flex items-center gap-2 md:gap-6">
-              <div className="hidden md:flex items-center gap-6 mr-4">
-                {navLinks.map((link) => (
-                  <Link key={link.path} href={link.path} className={`text-sm font-medium transition-all hover:text-primary relative group ${pathname === link.path ? 'text-primary' : (isTransparent ? 'text-black hover:text-black/80' : 'text-text-main')}`}>
-                    {link.name}
-                    <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full ${pathname === link.path ? 'w-full' : ''}`} />
-                  </Link>
-                ))}
-              </div>
-              <div className="flex items-center gap-1 md:gap-2">
-                <Link href="/favorites" className="relative p-2 md:p-2.5 hover:bg-primary/5 rounded-full transition-all group">
-                  <HiHeart className={`w-5 h-5 transition-colors ${favoriteCount > 0 ? 'text-red-500 fill-current' : (isTransparent ? 'text-black group-hover:text-black/80' : 'text-text-main group-hover:text-primary')}`} />
-                  {favoriteCount > 0 && <span className="absolute top-1 right-1 w-5 h-5 bg-accent text-black text-[10px] font-medium flex items-center justify-center rounded-full border-2 border-surface shadow-sm">{favoriteCount}</span>}
-                </Link>
-                <Link href="/cart" className="relative p-2 md:p-2.5 hover:bg-primary/5 rounded-full transition-all group">
-                  <HiShoppingCart className={`w-5 h-5 transition-colors ${isTransparent ? 'text-black group-hover:text-black/80' : 'text-text-main group-hover:text-primary'}`} />
-                  {cartCount > 0 && <span className="absolute top-1 right-1 w-5 h-5 bg-primary text-black text-[10px] font-medium flex items-center justify-center rounded-full border-2 border-surface shadow-sm">{cartCount}</span>}
-                </Link>
-                <div className={`w-px h-6 mx-2 hidden md:block ${isTransparent ? 'bg-white/20' : 'bg-muted/20'}`} />
-                <Link href="/signup">
-                  <Button variant="primary" size="sm" className="flex items-center gap-2 rounded-xl px-4 md:px-6 shadow-sm hover:shadow-md h-9 md:h-10 text-xs md:text-sm">
-                    <HiUser className="w-4 h-4" />
-                    <span className="hidden sm:inline">Sign Up</span>
-                    <span className="sm:hidden">Join</span>
-                  </Button>
-                </Link>
-              </div>
+
+            {/* Right icons */}
+            <div className="flex items-center gap-0.5 md:gap-1">
+              <Link href="/favorites" className="relative p-2.5 hover:bg-gray-50 transition-colors group">
+                <HiHeart
+                  className={`w-5 h-5 transition-colors ${
+                    favoriteCount > 0
+                      ? 'text-red-500 fill-current'
+                      : 'text-[#1A1A1A] group-hover:text-[#34B4FF]'
+                  }`}
+                />
+                {favoriteCount > 0 && (
+                  <span className="absolute top-0.5 right-0.5 w-4 h-4 bg-[#34B4FF] text-white text-[9px] font-black flex items-center justify-center rounded-full">
+                    {favoriteCount}
+                  </span>
+                )}
+              </Link>
+
+              <Link href="/cart" className="relative p-2.5 hover:bg-gray-50 transition-colors group">
+                <HiShoppingCart className="w-5 h-5 text-[#1A1A1A] group-hover:text-[#34B4FF] transition-colors" />
+                {cartCount > 0 && (
+                  <span className="absolute top-0.5 right-0.5 w-4 h-4 bg-[#34B4FF] text-white text-[9px] font-black flex items-center justify-center rounded-full">
+                    {cartCount}
+                  </span>
+                )}
+              </Link>
+
+              <div className="hidden md:block w-px h-5 bg-gray-200 mx-3" />
+
+              <Link
+                href="/signup"
+                className="hidden md:flex items-center gap-2 bg-[#1A1A1A] text-white text-[10px] font-black uppercase tracking-[0.18em] px-5 py-2.5 hover:bg-[#34B4FF] transition-colors duration-300"
+              >
+                <HiUser className="w-3.5 h-3.5" />
+                Account
+              </Link>
+
+              <button
+                className="lg:hidden p-2.5 text-[#1A1A1A] hover:bg-gray-50 transition-colors"
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              >
+                {isMobileMenuOpen ? <HiXMark className="w-6 h-6" /> : <HiBars3 className="w-6 h-6" />}
+              </button>
             </div>
-            <button className={`md:hidden p-2.5 rounded-full transition-colors ${isTransparent ? 'hover:bg-white/10 text-black' : 'hover:bg-muted/10 text-text-main'}`} onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-              {isMobileMenuOpen ? <HiXMark className="w-6 h-6" /> : <HiBars3 className="w-6 h-6" />}
-            </button>
           </div>
         </div>
-      </div>
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }} className="md:hidden bg-surface border-t border-muted/10 overflow-hidden">
-            <div className="container mx-auto px-4 py-6 space-y-8">
-              <div className="relative w-full group">
-                <HiMagnifyingGlass className="absolute left-4 top-1/2 -translate-y-1/2 text-muted w-4 h-4 group-focus-within:text-primary transition-colors" />
-                <input type="text" placeholder="Search products..." className="w-full pl-12 pr-4 py-3 bg-muted/5 border border-muted/10 rounded-full focus:outline-none focus:ring-4 focus:ring-primary/10 focus:bg-white focus:border-primary transition-all text-sm font-medium" />
+
+        {/* Mobile menu */}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="lg:hidden bg-white border-t border-gray-100 overflow-hidden"
+            >
+              <div className="px-6 py-8 space-y-6">
+                {NAV_LINKS.map((link) => (
+                  <Link
+                    key={link.path}
+                    href={link.path}
+                    className="block text-base font-black uppercase tracking-[0.18em] text-[#1A1A1A] hover:text-[#34B4FF] transition-colors border-b border-gray-100 pb-5"
+                  >
+                    {link.name}
+                  </Link>
+                ))}
+                <div className="flex gaps-6 gap-6 pt-2">
+                  <Link href="/favorites" className="flex items-center gap-2 text-sm font-semibold text-[#1A1A1A]">
+                    <HiHeart className="w-5 h-5" /> Favourites ({favoriteCount})
+                  </Link>
+                  <Link href="/cart" className="flex items-center gap-2 text-sm font-semibold text-[#1A1A1A]">
+                    <HiShoppingCart className="w-5 h-5" /> Cart ({cartCount})
+                  </Link>
+                </div>
+                <Link
+                  href="/signup"
+                  className="flex items-center justify-center gap-2 bg-[#1A1A1A] text-white text-[10px] font-black uppercase tracking-[0.18em] px-5 py-3.5 w-full"
+                >
+                  Create Account
+                </Link>
               </div>
-              <div className="flex flex-col gap-4">
-                {navLinks.map((link) => <Link key={link.path} href={link.path} className="text-lg font-medium border-b border-muted/5">{link.name}</Link>)}
-              </div>
-              <div className="flex items-center gap-4 pt-4">
-                <Link href="/favorites" className="flex items-center gap-2 text-lg font-medium"><HiHeart className="w-5 h-5" /> Favorites ({favoriteCount})</Link>
-                <Link href="/cart" className="flex items-center gap-2 text-lg font-medium"><HiShoppingCart className="w-5 h-5" /> Cart ({cartCount})</Link>
-              </div>
-              <div className="flex flex-col gap-3 py-4">
-                <Link href="/signup"><Button variant="primary" className="w-full py-3 rounded-xl font-medium">Sign Up</Button></Link>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </nav>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </nav>
+    </header>
   );
 };

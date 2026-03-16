@@ -1,108 +1,105 @@
-'use client';
+﻿'use client';
 import React from 'react';
 import { motion } from 'framer-motion';
-import { HiTruck, HiShieldCheck, HiArrowPath, HiSparkles } from 'react-icons/hi2';
-import { ComponentType } from 'react';
 
-const fadeUp = (delay = 0) => ({
-  initial: { opacity: 0, y: 30 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true },
-  transition: { duration: 0.7, delay, ease: 'easeOut' },
-});
+const PERKS = [
+  {
+    num: '01',
+    title: 'Free UK Shipping',
+    body: 'On every order over 50 pounds. No discount code needed, no small print. Delivered straight to your door.',
+  },
+  {
+    num: '02',
+    title: '2-Year Warranty',
+    body: 'Every LAZAK product is backed by a full 2-year manufacturer warranty. We stand completely behind what we make.',
+  },
+  {
+    num: '03',
+    title: '30-Day Returns',
+    body: 'Changed your mind? Return within 30 days on us. Clean, simple, zero questions asked.',
+  },
+  {
+    num: '04',
+    title: '4.8 Star Rating',
+    body: 'Over 10,000 verified customers rate us highly for quality, durability, and fast shipping. Honest reviews only.',
+  },
+  {
+    num: '05',
+    title: 'UK-Based Support',
+    body: 'Real people answering every message promptly. Our team resolves issues fast and treats every customer with care.',
+  },
+  {
+    num: '06',
+    title: 'Secure Checkout',
+    body: 'Fully encrypted payments with zero data stored on our servers. Shop with complete confidence every time.',
+  },
+];
 
 export const WhyChooseUs = () => {
-  const features: { icon: ComponentType<{ className?: string }>; title: string; description: string; accent: string }[] = [
-    {
-      icon: HiSparkles,
-      title: 'Built to Last',
-      description: "Every item we sell goes through real testing — not just on paper. If it doesn't hold up in a busy kitchen, it doesn't make it to our shelves.",
-      accent: 'from-primary/20 to-primary/5',
-    },
-    {
-      icon: HiShieldCheck,
-      title: '2-Year Warranty',
-      description: "We stand behind what we sell. Every LAZAK product comes with a 2-year warranty. Something breaks? We fix it or replace it. Simple as that.",
-      accent: 'from-secondary/20 to-secondary/5',
-    },
-    {
-      icon: HiTruck,
-      title: 'Free US Shipping',
-      description: "Orders over $50 ship free across the continental United States. Most orders leave our warehouse within one business day.",
-      accent: 'from-accent/20 to-accent/5',
-    },
-    {
-      icon: HiArrowPath,
-      title: '30-Day Returns',
-      description: "Changed your mind or something isn't quite right? No drama. Send it back within 30 days and we'll sort you out — no awkward questions.",
-      accent: 'from-emerald-500/20 to-emerald-500/5',
-    },
-  ];
-
   return (
-    <section className="py-24 bg-background relative overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-muted/20 to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-muted/20 to-transparent" />
-      </div>
+    <section className="bg-[#0A0A0A] py-24 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10">
 
-      <div className="container mx-auto px-4 md:px-6">
+        {/* Header block */}
+        <div className="grid lg:grid-cols-2 gap-10 items-end mb-20">
+          <div>
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="flex items-center gap-3 mb-7"
+            >
+              <div className="w-8 h-[2px] bg-[#34B4FF]" />
+              <span className="text-[9px] font-black uppercase tracking-[0.32em] text-[#34B4FF]">
+                Why LAZAK
+              </span>
+            </motion.div>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-5xl lg:text-6xl font-black text-white leading-[1.0] tracking-tighter uppercase"
+            >
+              Built Around<br />
+              <span className="text-[#34B4FF]">You.</span>
+            </motion.h2>
+          </div>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.15 }}
+            className="text-white/45 text-lg leading-relaxed max-w-md"
+          >
+            Every detail in the LAZAK range is considered from the perspective
+            of the person using it daily. That is how we build and why customers keep coming back.
+          </motion.p>
+        </div>
 
-        {/* Section header */}
-        <motion.div {...fadeUp()} className="text-center max-w-2xl mx-auto mb-20">
-          <span className="inline-block text-primary text-xs font-semibold uppercase tracking-[0.3em] mb-4">Why LAZAK</span>
-          <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-secondary mb-5">
-            Honest reasons people keep coming back
-          </h2>
-          <p className="text-text-muted text-lg leading-relaxed">
-            No fluff. Here&apos;s exactly what you get when you order from us — and why thousands of home cooks across the US trust LAZAK for their kitchen.
-          </p>
-        </motion.div>
-
-        {/* Feature grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {features.map((feature, i) => (
+        {/* Numbered list */}
+        <div className="border-t border-white/10">
+          {PERKS.map((p, i) => (
             <motion.div
               key={i}
-              {...fadeUp(i * 0.1)}
-              whileHover={{ y: -4 }}
-              className="group relative bg-white rounded-2xl p-8 border border-muted/8 shadow-soft hover:shadow-medium transition-all duration-300"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.06, duration: 0.5 }}
+              className="grid grid-cols-[56px_1fr_1fr] md:grid-cols-[72px_1fr_1fr] gap-6 md:gap-10 py-7 border-b border-white/10 group cursor-default hover:border-[#34B4FF]/40 transition-colors duration-300"
             >
-              <div className={`absolute top-0 left-8 right-8 h-0.5 bg-gradient-to-r ${feature.accent} rounded-full`} />
-
-              <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${feature.accent} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                <feature.icon className="w-7 h-7 text-secondary" />
-              </div>
-
-              <h3 className="text-xl font-semibold text-secondary mb-3 tracking-tight">{feature.title}</h3>
-              <p className="text-text-muted text-sm leading-relaxed">{feature.description}</p>
+              <span className="text-[11px] font-black uppercase tracking-widest text-white/20 group-hover:text-[#34B4FF] transition-colors duration-300 pt-0.5">
+                {p.num}
+              </span>
+              <h3 className="text-white font-black text-sm uppercase tracking-[0.1em] group-hover:text-[#34B4FF] transition-colors duration-300 pt-0.5">
+                {p.title}
+              </h3>
+              <p className="text-white/40 text-sm leading-relaxed">
+                {p.body}
+              </p>
             </motion.div>
           ))}
         </div>
-
-        {/* Bottom strip */}
-        <motion.div
-          {...fadeUp(0.4)}
-          className="mt-16 bg-secondary rounded-2xl px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-6"
-        >
-          <div className="flex flex-col md:flex-row items-center gap-6">
-            <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center">
-              <HiShieldCheck className="w-6 h-6 text-primary" />
-            </div>
-            <div className="text-center md:text-left">
-              <p className="text-white font-semibold text-lg">10,000+ happy customers — and counting</p>
-              <p className="text-white/50 text-sm">Serving home cooks and food lovers across the United States</p>
-            </div>
-          </div>
-          <div className="flex items-center gap-8 shrink-0">
-            {['4.8★ Reviews', 'Free Returns', 'US Support'].map((badge) => (
-              <div key={badge} className="text-center">
-                <div className="text-white text-xs font-semibold uppercase tracking-widest">{badge}</div>
-                <div className="w-full h-px bg-white/10 mt-1" />
-              </div>
-            ))}
-          </div>
-        </motion.div>
       </div>
     </section>
   );

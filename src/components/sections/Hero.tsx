@@ -1,118 +1,184 @@
-'use client';
+﻿'use client';
 import React from 'react';
 import { motion } from 'framer-motion';
-import { HiArrowRight, HiCheckBadge, HiArrowDown } from 'react-icons/hi2';
+import { HiArrowRight } from 'react-icons/hi2';
 import Link from 'next/link';
+
+const SPECS = [
+  { label: 'Foldable Design', sub: 'Saves counter space instantly' },
+  { label: 'Aluminium Frame', sub: 'Rust-free, built to last' },
+  { label: 'Anti-Slip Base', sub: 'Grips every surface' },
+  { label: 'Fast Air Dry', sub: 'Open slat drainage system' },
+];
+
+const STATS = [
+  { value: '4.8', label: 'Star Rating' },
+  { value: '10K+', label: 'Customers' },
+  { value: '2 Yr', label: 'Warranty' },
+  { value: 'Free', label: 'UK Shipping' },
+];
 
 export const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 z-0">
-        <img src="/kitchen1.png" alt="LAZAK Kitchen Accessories" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/30" />
-      </div>
+    <section className="relative overflow-hidden" style={{ paddingTop: '72px' }}>
+      {/* Two-panel hero */}
+      <div className="grid lg:grid-cols-[56%_44%] min-h-[calc(100vh-112px)]">
 
-      {/* Vertical decorative lines */}
-      <div className="absolute top-1/4 left-8 w-px h-32 bg-gradient-to-b from-transparent via-primary/60 to-transparent hidden lg:block" />
-      <div className="absolute top-1/4 right-8 w-px h-32 bg-gradient-to-b from-transparent via-primary/60 to-transparent hidden lg:block" />
+        {/* LEFT: White editorial text */}
+        <div className="flex flex-col justify-center px-8 md:px-14 lg:px-16 xl:px-24 py-16 bg-white">
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-32">
-        <div className="max-w-5xl mx-auto text-center">
-
-          {/* Trust badge */}
+          {/* Eyebrow */}
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-5 py-2 mb-10"
+            transition={{ duration: 0.5 }}
+            className="flex items-center gap-3 mb-10"
           >
-            <HiCheckBadge className="w-4 h-4 text-primary" />
-            <span className="text-white/90 text-xs font-medium uppercase tracking-[0.2em]">Quality Tested. Customer Approved.</span>
+            <div className="w-8 h-[2px] bg-[#34B4FF]" />
+            <span className="text-[9px] font-black uppercase tracking-[0.35em] text-[#34B4FF]">
+              Kitchen Essentials 2026
+            </span>
           </motion.div>
 
-          {/* Headline */}
-          <motion.h1
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-5xl md:text-7xl lg:text-8xl font-medium text-white leading-[1.05] tracking-tight mb-6"
-          >
-            Everything Your<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/70">Kitchen Needs</span>
-          </motion.h1>
+          {/* Headline - line by line reveal */}
+          <div className="overflow-hidden mb-1">
+            <motion.h1
+              initial={{ y: '102%' }}
+              animate={{ y: 0 }}
+              transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
+              className="text-[clamp(3.2rem,7.5vw,6.5rem)] font-black leading-[0.92] tracking-tighter text-[#1A1A1A] uppercase"
+            >
+              The Dish
+            </motion.h1>
+          </div>
+          <div className="overflow-hidden mb-1">
+            <motion.h1
+              initial={{ y: '102%' }}
+              animate={{ y: 0 }}
+              transition={{ duration: 0.75, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+              className="text-[clamp(3.2rem,7.5vw,6.5rem)] font-black leading-[0.92] tracking-tighter uppercase"
+              style={{ WebkitTextStroke: '2px #1A1A1A', color: 'transparent' }}
+            >
+              Rack That
+            </motion.h1>
+          </div>
+          <div className="overflow-hidden mb-10">
+            <motion.h1
+              initial={{ y: '102%' }}
+              animate={{ y: 0 }}
+              transition={{ duration: 0.75, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+              className="text-[clamp(3.2rem,7.5vw,6.5rem)] font-black leading-[0.92] tracking-tighter text-[#34B4FF] uppercase"
+            >
+              Does It All.
+            </motion.h1>
+          </div>
 
-          {/* Subtitle */}
+          {/* Tagline */}
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.25 }}
-            className="text-lg md:text-xl text-white/75 max-w-2xl mx-auto leading-relaxed mb-12"
+            transition={{ duration: 0.5, delay: 0.45 }}
+            className="text-gray-500 text-base md:text-lg leading-relaxed max-w-sm mb-10"
           >
-            From sharp knives and durable cookware to cooler bags, drying racks, and cutting boards -- LAZAK has every kitchen accessory you actually use.
+            Foldable aluminium construction. Anti-slip base. Dries faster,
+            stores smaller, and lasts years longer than plastic alternatives.
           </motion.p>
 
-          {/* CTA Buttons */}
+          {/* CTA */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex flex-wrap items-center justify-center gap-4 mb-16"
+            transition={{ duration: 0.5, delay: 0.55 }}
+            className="flex flex-wrap gap-4"
           >
             <Link href="/products">
-              <button className="group inline-flex items-center gap-3 bg-primary text-white px-8 py-4 rounded-xl font-medium text-sm uppercase tracking-widest hover:bg-primary/90 transition-all duration-300 shadow-lg shadow-primary/30 hover:shadow-primary/50 hover:scale-[1.02]">
+              <motion.button
+                whileHover={{ x: 4 }}
+                transition={{ type: 'spring', stiffness: 400, damping: 25 }}
+                className="inline-flex items-center gap-3 bg-[#1A1A1A] text-white px-8 py-4 text-[10px] font-black uppercase tracking-[0.22em] hover:bg-[#34B4FF] transition-colors duration-300 group"
+              >
                 Shop Now
-                <HiArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
+                <HiArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
+              </motion.button>
             </Link>
-            <Link href="/contact">
-              <button className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md text-white px-8 py-4 rounded-xl font-medium text-sm uppercase tracking-widest border border-white/25 hover:bg-white/20 transition-all duration-300 hover:scale-[1.02]">
-                Get in Touch
-              </button>
+            <Link href="/products/lazak-foldable-dish-drying-mat-large">
+              <motion.button
+                whileHover={{ x: 4 }}
+                transition={{ type: 'spring', stiffness: 400, damping: 25 }}
+                className="inline-flex items-center gap-3 border-2 border-[#1A1A1A] text-[#1A1A1A] px-8 py-4 text-[10px] font-black uppercase tracking-[0.22em] hover:border-[#34B4FF] hover:text-[#34B4FF] transition-colors duration-300"
+              >
+                View Product
+              </motion.button>
             </Link>
           </motion.div>
 
           {/* Stats */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.55 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 rounded-2xl overflow-hidden backdrop-blur-md border border-white/10 max-w-3xl mx-auto"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.75 }}
+            className="flex items-center gap-8 mt-12 pt-8 border-t border-gray-100"
           >
-            {[
-              { value: '10K+', label: 'Orders Shipped' },
-              { value: '500+', label: 'Products' },
-              { value: '4.8', label: 'Star Rating' },
-              { value: '2 Yr', label: 'Warranty' },
-            ].map((stat, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.6 + i * 0.1 }}
-                className="bg-white/5 py-5 px-3 text-center"
-              >
-                <div className="text-2xl font-semibold text-white mb-1">{stat.value}</div>
-                <div className="text-[10px] text-white/50 uppercase tracking-widest">{stat.label}</div>
-              </motion.div>
+            {STATS.map((s, i) => (
+              <div key={i}>
+                <div className="text-xl font-black text-[#1A1A1A]">{s.value}</div>
+                <div className="text-[9px] text-gray-400 uppercase tracking-[0.22em] mt-0.5">{s.label}</div>
+              </div>
             ))}
           </motion.div>
         </div>
+
+        {/* RIGHT: Dark product panel with clip-path wipe reveal */}
+        <motion.div
+          initial={{ clipPath: 'inset(0 100% 0 0)' }}
+          animate={{ clipPath: 'inset(0 0% 0 0)' }}
+          transition={{ duration: 1.0, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+          className="relative bg-[#0D0D0D] flex items-center justify-center overflow-hidden min-h-[65vw] lg:min-h-0"
+        >
+          <img
+            src="/lazak dry dish mat-1.png"
+            alt="LAZAK Dish Drying Mat"
+            className="w-full h-full object-cover opacity-85"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D0D]/70 to-transparent" />
+
+          {/* Feature tags floating at bottom */}
+          <div className="absolute bottom-8 left-6 right-6 flex gap-2 flex-wrap">
+            {['Foldable', 'Aluminium Frame', 'Anti-Slip', 'Rust-Free'].map((tag, i) => (
+              <motion.span
+                key={i}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.1 + i * 0.08 }}
+                className="bg-white/10 backdrop-blur-sm text-white text-[9px] font-black uppercase tracking-[0.2em] px-3 py-2 border border-white/20"
+              >
+                {tag}
+              </motion.span>
+            ))}
+          </div>
+        </motion.div>
       </div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 0.8 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/40"
-      >
-        <span className="text-[9px] uppercase tracking-[0.3em]">Scroll</span>
-        <motion.div animate={{ y: [0, 6, 0] }} transition={{ repeat: Infinity, duration: 1.5 }}>
-          <HiArrowDown className="w-4 h-4" />
-        </motion.div>
-      </motion.div>
+      {/* Bottom specs strip */}
+      <div className="bg-[#1A1A1A]">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-white/10">
+            {SPECS.map((f, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.07 }}
+                className="py-7 px-8"
+              >
+                <div className="text-[11px] font-black uppercase tracking-[0.18em] text-white">{f.label}</div>
+                <div className="text-[10px] text-white/40 mt-1.5 leading-relaxed">{f.sub}</div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
     </section>
   );
 };

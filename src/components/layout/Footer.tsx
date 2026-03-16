@@ -1,75 +1,86 @@
-﻿'use client';
+'use client';
+import React from 'react';
 import Link from 'next/link';
 import { Logo } from '@/components/ui/Logo';
-import { FaFacebook, FaTwitter, FaInstagram, FaYoutube } from 'react-icons/fa';
-import { HiEnvelope, HiPhone, HiMapPin } from 'react-icons/hi2';
+import { FaInstagram, FaFacebookF, FaYoutube } from 'react-icons/fa';
 
 export const Footer = () => {
-  const quickLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'Products', path: '/products' },
-    { name: 'Blog', path: '/blog' },
-    { name: 'Contact', path: '/contact' },
-  ];
-  const categories = [
-    { name: 'Cookware', path: '/category/cookware' },
-    { name: 'Knives & Cutting', path: '/category/knives' },
-    { name: 'Kitchen Accessories', path: '/category/accessories' },
-    { name: 'Cooking Essentials', path: '/category/essentials' },
-  ];
-
   return (
     <footer className="bg-secondary text-white">
-      <div className="container mx-auto px-4 md:px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-          <div className="space-y-6">
-            <Logo variant="light" />
-            <p className="text-white/60 text-sm leading-relaxed">Quality kitchen tools for home cooks who actually cook. Browse our range and find something you&apos;ll use every single day.</p>
-            <div className="flex items-center gap-3">
+      <div className="container mx-auto px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+
+          {/* Brand */}
+          <div className="space-y-5">
+            <Logo />
+            <p className="text-white/40 text-sm leading-relaxed">
+              Kitchen accessories made for people who actually cook.
+            </p>
+            <div className="flex gap-3">
               {[
-                { icon: <FaFacebook className="w-4 h-4" />, label: 'Facebook', href: '#' },
-                { icon: <FaTwitter className="w-4 h-4" />, label: 'Twitter', href: '#' },
-                { icon: <FaInstagram className="w-4 h-4" />, label: 'Instagram', href: '#' },
-                { icon: <FaYoutube className="w-4 h-4" />, label: 'YouTube', href: '#' },
-              ].map((s) => (
-                <a key={s.label} href={s.href} aria-label={s.label} className="p-2.5 bg-white/10 hover:bg-primary rounded-xl transition-colors">
-                  {s.icon}
+                { icon: FaInstagram, label: 'Instagram' },
+                { icon: FaFacebookF, label: 'Facebook' },
+                { icon: FaYoutube, label: 'YouTube' },
+              ].map(({ icon: Icon, label }) => (
+                <a key={label} href="#" aria-label={label} className="w-9 h-9 bg-white/8 hover:bg-primary flex items-center justify-center transition-colors">
+                  <Icon className="w-4 h-4" />
                 </a>
               ))}
             </div>
           </div>
-          <div className="space-y-4">
-            <h3 className="text-white font-semibold text-base">Quick Links</h3>
+
+          {/* Shop */}
+          <div>
+            <h4 className="text-[10px] font-bold uppercase tracking-[0.25em] text-white/35 mb-5">Shop</h4>
             <ul className="space-y-3">
-              {quickLinks.map((l) => (
-                <li key={l.path}><Link href={l.path} className="text-white/60 hover:text-white text-sm transition-colors">{l.name}</Link></li>
+              {[
+                { label: 'Dish Drying Racks', href: '/category/dish-drying-racks' },
+                { label: 'Cooler Bags', href: '/category/cooler-bags' },
+                { label: 'Food Storage', href: '/category/food-storage' },
+                { label: 'All Products', href: '/products' },
+              ].map(l => (
+                <li key={l.label}>
+                  <Link href={l.href} className="text-white/55 text-sm hover:text-white transition-colors">{l.label}</Link>
+                </li>
               ))}
             </ul>
           </div>
-          <div className="space-y-4">
-            <h3 className="text-white font-semibold text-base">Categories</h3>
+
+          {/* Company */}
+          <div>
+            <h4 className="text-[10px] font-bold uppercase tracking-[0.25em] text-white/35 mb-5">Company</h4>
             <ul className="space-y-3">
-              {categories.map((c) => (
-                <li key={c.path}><Link href={c.path} className="text-white/60 hover:text-white text-sm transition-colors">{c.name}</Link></li>
+              {[
+                { label: 'Blog', href: '/blog' },
+                { label: 'Contact Us', href: '/contact' },
+                { label: 'My Account', href: '/login' },
+                { label: 'Create Account', href: '/signup' },
+              ].map(l => (
+                <li key={l.label}>
+                  <Link href={l.href} className="text-white/55 text-sm hover:text-white transition-colors">{l.label}</Link>
+                </li>
               ))}
             </ul>
           </div>
-          <div className="space-y-4">
-            <h3 className="text-white font-semibold text-base">Contact</h3>
-            <ul className="space-y-3">
-              <li className="flex items-center gap-3 text-white/60 text-sm"><HiEnvelope className="w-4 h-4 text-primary shrink-0" /><span>hello@lazak.com</span></li>
-              <li className="flex items-center gap-3 text-white/60 text-sm"><HiPhone className="w-4 h-4 text-primary shrink-0" /><span>+1 (555) 123-4567</span></li>
-              <li className="flex items-start gap-3 text-white/60 text-sm"><HiMapPin className="w-4 h-4 text-primary shrink-0 mt-0.5" /><span>Los Angeles, CA — United States</span></li>
+
+          {/* Contact */}
+          <div>
+            <h4 className="text-[10px] font-bold uppercase tracking-[0.25em] text-white/35 mb-5">Contact</h4>
+            <ul className="space-y-3 text-white/55 text-sm">
+              <li>support@lazak.com</li>
+              <li>+1 (800) 123-4567</li>
+              <li className="pt-2 text-white/30 text-xs leading-relaxed">
+                Los Angeles, CA<br />United States
+              </li>
             </ul>
           </div>
         </div>
-      </div>
-      <div className="border-t border-white/10">
-        <div className="container mx-auto px-4 md:px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-white/40 text-sm">&copy; {new Date().getFullYear()} LAZAK. All rights reserved.</p>
-          <div className="flex items-center gap-6">
-            <Link href="#" className="text-white/40 hover:text-white text-sm transition-colors">Privacy Policy</Link>
-            <Link href="#" className="text-white/40 hover:text-white text-sm transition-colors">Terms of Service</Link>
+
+        <div className="border-t border-white/8 mt-14 pt-8 flex flex-col sm:flex-row justify-between gap-4 text-white/25 text-xs">
+          <span>&copy; 2026 LAZAK. All rights reserved.</span>
+          <div className="flex gap-6">
+            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
           </div>
         </div>
       </div>
