@@ -40,17 +40,11 @@ function ProductsContent() {
   }, [selectedCategory, sortBy, searchQuery, maxPrice]);
 
   const displayedProducts = useMemo(() => {
+    // Agar "All Products" selected hai toh saare filtered products dikhao
     if (selectedCategory === 'all' && !searchQuery) {
-      const result: typeof filteredProducts = [];
-      const usedIds = new Set<string>();
-      for (const category of CATEGORIES) {
-        if (result.length >= 6) break;
-        const product = filteredProducts.find(p => p.categories.includes(category.slug) && !usedIds.has(p.id));
-        if (product) { result.push(product); usedIds.add(product.id); }
-      }
-      return result;
+      return filteredProducts; // Yeh saare products show karega
     }
-    return filteredProducts.slice(0, 6);
+    return filteredProducts; // Yeh bhi saare products show karega for other categories
   }, [filteredProducts, selectedCategory, searchQuery]);
 
   const sectionVariants = { initial: { opacity: 0, y: 40 }, whileInView: { opacity: 1, y: 0 }, transition: { duration: 0.8, ease: 'easeOut' as const } };
@@ -69,13 +63,6 @@ function ProductsContent() {
                 ))}
               </div>
             </div>
-            <div className="space-y-4">
-              <h3 className="font-medium text-lg border-b border-muted/10 pb-2">Price Range</h3>
-              <div className="space-y-4">
-                <input type="range" className="w-full accent-primary cursor-pointer" min="0" max="1000" value={maxPrice} onChange={(e) => setMaxPrice(parseInt(e.target.value))} />
-                <div className="flex items-center justify-between text-xs text-text-muted"><span>$0</span><span className="font-medium text-primary">Up to ${maxPrice}</span><span>$1000+</span></div>
-              </div>
-            </div>
             <div className="bg-primary/5 p-6 rounded-2xl border border-primary/10">
               <h4 className="font-medium text-primary mb-2">USA Support</h4>
               <p className="text-xs text-text-muted leading-relaxed">All products ship from our USA warehouses with 24/7 local support.</p>
@@ -89,12 +76,7 @@ function ProductsContent() {
                   <HiMagnifyingGlass className="absolute left-3 top-1/2 -translate-y-1/2 text-muted w-4 h-4" />
                   <input type="text" placeholder="Search..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} className="pl-9 pr-4 py-2 bg-background border border-muted/10 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-primary/20" />
                 </div>
-                <select value={sortBy} onChange={(e) => setSortBy(e.target.value)} className="bg-background border border-muted/10 px-4 py-2 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-primary/20">
-                  <option value="newest">Sort by: Newest</option>
-                  <option value="price-low">Price: Low to High</option>
-                  <option value="price-high">Price: High to Low</option>
-                  <option value="rating">Rating: High to Low</option>
-                </select>
+               
               </div>
             </div>
             {displayedProducts.length > 0 ? (
