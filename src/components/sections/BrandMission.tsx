@@ -18,7 +18,7 @@ export const BrandMission = () => {
             className="relative h-full min-h-[480px] lg:min-h-[560px] bg-[#F5F5F3]"
           >
             <img
-              src="/image copy 5.png"
+              src="/image copy 3.png"
               alt="Who We Are - LAZAK Home Essentials"
               className="absolute inset-0 w-full h-full object-cover"
               style={{ filter: 'brightness(1.05) saturate(1.1)' }}
@@ -43,7 +43,7 @@ export const BrandMission = () => {
 
               <h2 className="text-4xl lg:text-5xl font-black text-[#1A1A1A] tracking-tighter uppercase leading-[1.0] mb-8">
                 Made for 
-                <span className="text-[#34B4FF] ms-3">Real Homes.</span>
+                <span className="text-[#34B4FF] ms-">Real Homes.</span>
               </h2>
 
               <p className="text-gray-500 text-lg leading-relaxed mb-6">
