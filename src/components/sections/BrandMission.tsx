@@ -18,7 +18,7 @@ export const BrandMission = () => {
             className="relative h-full min-h-[480px] lg:min-h-[560px] bg-[#F5F5F3]"
           >
             <img
-              src="/image copy 3.png"
+              src="/image copy 5.png"
               alt="Who We Are - LAZAK Home Essentials"
               className="absolute inset-0 w-full h-full object-cover"
               style={{ filter: 'brightness(1.05) saturate(1.1)' }}
