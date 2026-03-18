@@ -17,7 +17,7 @@ const ROWS = [
     num: '02',
     tag: 'Built to Last',
     heading: 'Aluminium frame.\nZero rust.',
-    body: 'Food-grade aluminium alloy that does not bend, warp, or rust. Engineered for daily kitchen use and designed to outlast cheap plastic alternatives by years.',
+    body: 'Food-grade aluminium alloy that does not bend, warp, or rust. Engineered for daily Kitchen and Home Essentials use and designed to outlast cheap plastic alternatives by years.',
     image: '/Lazak Dish Dry mat-5.png',
     imageLeft: true,
   },
@@ -74,7 +74,7 @@ export const FeatureSection = () => {
                 {row.num}
               </span>
               <div className="flex-1 h-px bg-gray-100" />
-              <span className="text-[9px] font-black uppercase tracking-[0.3em] text-[#34B4FF]">
+              <span className="text-[15px] font-black uppercase tracking-[0.3em] text-[#34B4FF]">
                 {row.tag}
               </span>
             </div>

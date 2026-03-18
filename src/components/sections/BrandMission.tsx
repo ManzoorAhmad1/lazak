@@ -18,7 +18,7 @@ export const BrandMission = () => {
             className="relative h-full min-h-[480px] lg:min-h-[560px] bg-[#F5F5F3]"
           >
             <img
-              src="/image copy 3.png"
+              src="/image copy 6.png"
               alt="Who We Are - LAZAK Home Essentials"
               className="absolute inset-0 w-full h-full object-cover"
               style={{ filter: 'brightness(1.05) saturate(1.1)' }}
@@ -36,28 +36,21 @@ export const BrandMission = () => {
             <div>
               <div className="flex items-center gap-3 mb-8">
                 <div className="w-8 h-[2px] bg-[#34B4FF]" />
-                <span className="text-[9px] font-black uppercase tracking-[0.32em] text-[#34B4FF]">
+                <span className="text-[15px] font-black uppercase tracking-[0.32em] text-[#34B4FF]">
                   Who We Are
                 </span>
               </div>
 
               <h2 className="text-4xl lg:text-5xl font-black text-[#1A1A1A] tracking-tighter uppercase leading-[1.0] mb-8">
                 Made for 
-                <span className="text-[#34B4FF] ms-3">Real Homes.</span>
+                <span className="text-[#34B4FF] ms-3">comfort.</span>
               </h2>
 
               <p className="text-gray-500 text-lg leading-relaxed mb-6">
-                LAZAK was built around one simple belief: the tools you use every
-                day in your home should feel good, work well, and last long. We are
-                not about trends. We are about the quiet confidence of a well-made
-                thing that simply works.
+                It is not just about trends, it's about bringing comfort with care.
               </p>
 
-              <p className="text-gray-500 text-lg leading-relaxed mb-10">
-                Every product in our kitchen and home range has been chosen with
-                care, tested in real homes, and designed to make daily life a
-                little less complicated and a great deal more comfortable.
-              </p>
+             
 
               <Link href="/products">
                 <button className="inline-flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.22em] text-[#1A1A1A] border-b-2 border-[#1A1A1A] pb-1 hover:text-[#34B4FF] hover:border-[#34B4FF] transition-colors duration-300 group">

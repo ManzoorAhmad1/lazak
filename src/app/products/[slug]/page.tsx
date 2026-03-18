@@ -73,10 +73,7 @@ export default function ProductDetailPage() {
                 </div>
                 <span className="text-text-muted text-sm font-medium uppercase tracking-widest">({product.reviews} Verified Reviews)</span>
               </div>
-              <div className="flex items-baseline gap-4 pt-2">
-                <span className="text-5xl font-medium text-secondary">${product.price}</span>
-                <span className="text-xl text-text-muted line-through opacity-40 font-medium">${(product.price * 1.2).toFixed(2)}</span>
-              </div>
+              
               <p className="text-text-muted text-lg leading-relaxed font-medium max-w-xl">{product.description}</p>
             </div>
             <div className="space-y-6">
@@ -92,12 +89,7 @@ export default function ProductDetailPage() {
                 </ul>
               </div>
               <div className="flex flex-wrap gap-4 pt-4">
-                <Button size="lg" className="flex-1 gap-3 rounded-none h-16 text-lg font-medium uppercase tracking-widest shadow-xl hover:-translate-y-0.5 transition-all" onClick={() => openSelectionDrawer(product)}>
-                  <HiShoppingCart className="w-6 h-6" /> Add to Cart
-                </Button>
-                <Button variant="outline" size="lg" className="gap-2 rounded-none h-16 px-10 border-2" onClick={() => toggleFavorite(product)}>
-                  <HiHeart className={`w-6 h-6 ${favorite ? 'fill-current text-accent' : ''}`} />
-                </Button>
+                
               </div>
             </div>
             <div className="space-y-10 pt-10 border-t border-muted/10">

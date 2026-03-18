@@ -14,8 +14,8 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: 'LAZAK - Premium Kitchen Accessories',
-  description: 'Premium foldable dish racks, kitchen accessories and cookware essentials for home cooks across the UK.',
+  title: 'LAZAK - Premium Kitchen and Home Essentials Accessories',
+  description: 'Premium foldable dish racks, Kitchen and Home Essentials accessories and cookware essentials for home cooks across the UK.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

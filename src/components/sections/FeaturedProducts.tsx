@@ -16,7 +16,7 @@ export const FeaturedProducts = () => {
           <div>
             <div className="flex items-center gap-3 mb-5">
               <div className="w-8 h-[2px] bg-[#34B4FF]" />
-              <span className="text-[9px] font-black uppercase tracking-[0.32em] text-[#34B4FF]">Our Collection</span>
+              <span className="text-[15px] font-black uppercase tracking-[0.32em] text-[#34B4FF]">Our Collection</span>
             </div>
             <h2 className="text-4xl lg:text-5xl font-black text-[#1A1A1A] tracking-tighter uppercase leading-[1.0]">Best Sellers</h2>
           </div>

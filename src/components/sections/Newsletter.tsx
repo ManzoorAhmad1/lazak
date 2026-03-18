@@ -28,20 +28,11 @@ export const Newsletter = () => {
               className="flex items-center gap-3 mb-7"
             >
               <div className="w-8 h-[2px] bg-[#34B4FF]" />
-              <span className="text-[9px] font-black uppercase tracking-[0.32em] text-[#34B4FF]">
+              <span className="text-[15px] font-black uppercase tracking-[0.32em] text-[#34B4FF]">
                 Newsletter
               </span>
             </motion.div>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-4xl lg:text-5xl font-black text-white leading-[1.0] tracking-tighter uppercase"
-            >
-              Get 10% Off<br />
-              Your First Order.
-            </motion.h2>
+        
           </div>
 
           {/* Right: Form */}

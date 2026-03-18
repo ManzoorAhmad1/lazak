@@ -21,18 +21,9 @@ const VALUES = [
   {
     num: '04',
     title: 'Simple to Live With',
-    body: 'Every product we carry should be easy to use, easy to store, and easy to love. We believe the best home tools are the ones you barely have to think about.',
+    body: 'Every product we carry should be easy to use, easy to store, and easy to love. We believe the best home utensilizes are the ones you barely have to think about.',
   },
-  {
-    num: '05',
-    title: 'UK Based, UK Delivered',
-    body: 'We are based in the UK, we understand UK homes, and we ship promptly to your door. Real support from real people who care about your experience.',
-  },
-  {
-    num: '06',
-    title: 'Your Satisfaction, Always',
-    body: '30-day returns, a 2-year warranty, and a team that actually picks up. Your peace of mind is not a small print item. It is the whole point.',
-  },
+  
 ];
 
 export const WhyChooseUs = () => {
@@ -50,7 +41,7 @@ export const WhyChooseUs = () => {
               className="flex items-center gap-3 mb-7"
             >
               <div className="w-8 h-[2px] bg-[#34B4FF]" />
-              <span className="text-[9px] font-black uppercase tracking-[0.32em] text-[#34B4FF]">
+              <span className="text-[15px] font-black uppercase tracking-[0.32em] text-[#34B4FF]">
                 Our Values
               </span>
             </motion.div>
@@ -72,7 +63,7 @@ export const WhyChooseUs = () => {
             transition={{ delay: 0.15 }}
             className="text-white/45 text-lg leading-relaxed max-w-md"
           >
-            We are not just selling kitchen products. We are committed to
+            We are not just selling Kitchen and Home Essentials products. We are committed to
             making your home life better -- more comfortable, more organised,
             and a great deal less stressful.
           </motion.p>

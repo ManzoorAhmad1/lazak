@@ -5,23 +5,20 @@ import { motion } from 'framer-motion';
 const PILLARS = [
   {
     image: '/image1.jpg',
-    tag: 'Your Kitchen',
+    tag: 'Your Kitchen and Home Essentials',
     heading: 'A Kitchen That Works For You',
-    body: 'When your kitchen tools are thoughtfully designed, cooking stops feeling like a chore. The right essentials create a space that flows, feels clean, and makes every meal easier to put together.',
     bright: true,
   },
   {
     image: '/image copy 4.png',
     tag: 'Your Home',
-    heading: 'A Home Worth Coming Back To',
-    body: 'Home should feel like a place of comfort. The small things -- a well-organised shelf, a mat that holds its ground, a rack that tucks away neatly -- all add up to a home that breathes.',
+    heading: 'Where Every Kitchen Feels Like Home',
     bright: false,
   },
   {
     image: '/image copy 2.png',
     tag: 'Your Life',
     heading: 'Less Effort. More Living.',
-    body: 'We choose every product in our range by asking one question: does this genuinely make life easier? If the answer is yes, it earns its place. That is how we take care of you.',
     bright: true,
   },
 ];
@@ -41,7 +38,7 @@ export const LifestylePillars = () => {
               className="flex items-center gap-3 mb-6"
             >
               <div className="w-8 h-[2px] bg-[#34B4FF]" />
-              <span className="text-[9px] font-black uppercase tracking-[0.32em] text-[#34B4FF]">
+              <span className="text-[15px] font-black uppercase tracking-[0.32em] text-[#34B4FF]">
                 How We Help
               </span>
             </motion.div>
@@ -53,7 +50,7 @@ export const LifestylePillars = () => {
               className="text-4xl lg:text-5xl font-black text-[#1A1A1A] tracking-tighter uppercase leading-[1.0]"
             >
               Making Your Life<br />
-              <span className="text-[#34B4FF]">Easier Every Day.</span>
+              <span className="text-[#34B4FF]">Comfort with style.</span>
             </motion.h2>
           </div>
           <motion.p
@@ -63,8 +60,7 @@ export const LifestylePillars = () => {
             transition={{ delay: 0.15 }}
             className="text-gray-500 text-base leading-relaxed max-w-sm"
           >
-            From the morning rush to a quiet evening at home. LAZAK products
-            are here to remove friction and add comfort to the moments that matter.
+           Lazak Products – Your Kitchen and Home Essential Partner.
           </motion.p>
         </div>
 
@@ -96,13 +92,11 @@ export const LifestylePillars = () => {
               </div>
 
               {/* Text */}
-              <div className="bg-white p-8">
-                <h3 className="text-lg font-black text-[#1A1A1A] tracking-tight uppercase leading-tight mb-4">
+              <div className="bg-white p-4 flex justify-center items-center">
+                <h3 className="text-lg  text-[#1A1A1A] tracking-tight uppercase leading-tight">
                   {p.heading}
                 </h3>
-                <p className="text-gray-500 text-sm leading-relaxed">
-                  {p.body}
-                </p>
+                
               </div>
             </motion.div>
           ))}

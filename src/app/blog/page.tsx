@@ -22,8 +22,8 @@ export default function BlogPage() {
           className="text-center max-w-2xl mx-auto mb-16 space-y-4"
         >
           <Badge variant="secondary">LAZAK Blog</Badge>
-          <h1 className="text-4xl md:text-5xl font-medium">From Our Kitchen to Yours</h1>
-          <p className="text-text-muted">Recipes, tips, and honest thoughts on making the most of your kitchen setup.</p>
+          <h1 className="text-4xl md:text-5xl font-medium">From Our Kitchen and Home Essentials to Yours</h1>
+          <p className="text-text-muted">Recipes, tips, and honest thoughts on making the most of your Kitchen and Home Essentials setup.</p>
         </motion.div>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">

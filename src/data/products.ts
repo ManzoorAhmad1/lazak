@@ -11,7 +11,7 @@ export const PRODUCTS: Product[] = [
     slug: 'lazak-foldable-dish-drying-mat-standard',
     title: 'LAZAK Foldable Dish Drying Mat',
     price: 29.99,
-    description: 'The everyday kitchen essential. Foldable aluminum-frame dish drying mat with anti-slip base and fast air-dry design.',
+    description: 'The everyday Kitchen and Home Essentials. Foldable aluminum-frame dish drying mat with anti-slip base and fast air-dry design.',
     fullDescription: 'The LAZAK Foldable Dish Drying Mat brings smart design to your sink routine. Its open-slat aluminum frame lets air circulate freely so dishes dry faster without pooling water underneath.\n\nBuilt from food-grade aluminum alloy, it handles daily use without rusting, warping, or bending. When you are done, it folds flat for a drawer or hangs on a hook.\n\nIncludes silicone anti-slip feet and a small scrubbing pad.',
     image: '/lazak dry dish mat-1.png',
     rating: 4.6,
@@ -45,7 +45,7 @@ export const PRODUCTS: Product[] = [
     title: 'LAZAK Dish Drying Mat - Pro XL',
     price: 59.99,
     description: 'Maximum capacity for larger households. Extra-wide frame, premium slat spacing, included silicone trivet.',
-    fullDescription: 'The Pro XL is built for kitchens that do serious cooking. It handles a full dish load with room to spare, and the reinforced aluminum frame holds heavy pots and cast iron without flexing.\n\nExtra-wide slat spacing lets water drain quickly so nothing stays damp. Folds down thin for easy storage. The included silicone trivet doubles as a pot holder.\n\nIncludes silicone trivet, two scrubbing pads, cleaning guide, and extended anti-slip base.',
+    fullDescription: 'The Pro XL is built for Kitchen and Home Essentials that do serious cooking. It handles a full dish load with room to spare, and the reinforced aluminum frame holds heavy pots and cast iron without flexing.\n\nExtra-wide slat spacing lets water drain quickly so nothing stays damp. Folds down thin for easy storage. The included silicone trivet doubles as a pot holder.\n\nIncludes silicone trivet, two scrubbing pads, cleaning guide, and extended anti-slip base.',
     image: '/Lazak Dish Dry mat-5.png',
     rating: 4.9,
     reviews: 67,
@@ -72,9 +72,9 @@ export const BLOG_ARTICLES: BlogArticle[] = [
   },
   {
     id: 'b2',
-    slug: 'kitchen-tools-worth-buying',
-    title: '5 Kitchen Tools That Are Actually Worth It',
-    excerpt: 'Most kitchen gadgets sit in a drawer after week one. These five get pulled out every single day.',
+    slug: 'kitchen-utensilizes-worth-buying',
+    title: '5 Kitchen utensilizes That Are Actually Worth It',
+    excerpt: 'Most Kitchen and Home Essentials gadgets sit in a drawer after week one. These five get pulled out every single day.',
     date: 'February 28, 2026',
     image: '/lazak dry dish mat-2.png',
     author: 'Diana R.'
@@ -90,9 +90,9 @@ export const BLOG_ARTICLES: BlogArticle[] = [
   },
   {
     id: 'b4',
-    slug: 'how-to-care-for-kitchen-tools',
-    title: 'How to Keep Your Kitchen Tools in Great Shape',
-    excerpt: 'A little maintenance goes a long way. Simple habits that extend the life of every tool in your kitchen.',
+    slug: 'how-to-care-for-kitchen-utensilizes',
+    title: 'How to Keep Your Kitchen utensilizes in Great Shape',
+    excerpt: 'A little maintenance goes a long way. Simple habits that extend the life of every utensilize in your kitchen.',
     date: 'February 20, 2026',
     image: '/Lazak Dish Dry mat-5.png',
     author: 'Diana R.'

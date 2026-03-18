@@ -8,13 +8,13 @@ export const Footer = () => {
   return (
     <footer className="bg-secondary text-white">
       <div className="container mx-auto px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+        <div className="flex flex-col md:flex-row justify-between items-start">
 
           {/* Brand */}
           <div className="space-y-5">
              <img src="/black logo.png" alt="LAZAK" className="w-[120px] h-20 object-contain" />
             <p className="text-white/40 text-sm leading-relaxed">
-              Kitchen accessories made for people who actually cook.
+              Kitchen and Home Essentials made for people who actually cook.
             </p>
             <div className="flex gap-3">
               {[
@@ -30,21 +30,7 @@ export const Footer = () => {
           </div>
 
           {/* Shop */}
-          <div>
-            <h4 className="text-[10px] font-bold uppercase tracking-[0.25em] text-white/35 mb-5">Shop</h4>
-            <ul className="space-y-3">
-              {[
-                { label: 'Dish Drying Racks', href: '/category/dish-drying-racks' },
-                { label: 'Cooler Bags', href: '/category/cooler-bags' },
-                { label: 'Food Storage', href: '/category/food-storage' },
-                { label: 'All Products', href: '/products' },
-              ].map(l => (
-                <li key={l.label}>
-                  <Link href={l.href} className="text-white/55 text-sm hover:text-white transition-colors">{l.label}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+         
 
           {/* Company */}
           <div>
@@ -67,8 +53,8 @@ export const Footer = () => {
           <div>
             <h4 className="text-[10px] font-bold uppercase tracking-[0.25em] text-white/35 mb-5">Contact</h4>
             <ul className="space-y-3 text-white/55 text-sm">
-              <li>support@lazak.com</li>
-              <li>+1 (800) 123-4567</li>
+              <li>info@lazakcare.com</li>
+              <li>+15613959535</li>
               <li className="pt-2 text-white/30 text-xs leading-relaxed">
                 Los Angeles, CA<br />United States
               </li>

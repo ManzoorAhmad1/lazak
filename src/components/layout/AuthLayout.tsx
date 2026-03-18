@@ -28,7 +28,7 @@ export const AuthLayout = ({ children, title, subtitle, imageSide = 'right' }: A
               <HiArrowLeft className="w-4 h-4" /> Back to shop
             </Link>
             <h2 className="text-4xl font-bold mb-4">Join the LAZAK community</h2>
-            <p className="text-white/60 text-lg mb-12 leading-relaxed">Quality kitchen tools for home cooks across the US. Real products, real people, real support.</p>
+            <p className="text-white/60 text-lg mb-12 leading-relaxed">Quality Kitchen and Home Essentials and Home Essentials utensilizes for home cooks across the US. Real products, real people, real support.</p>
             <div className="space-y-4">
               {features.map((f, i) => (
                 <motion.div key={i} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.1 * i }} className="flex items-center gap-3 text-white/80">
@@ -65,7 +65,7 @@ export const AuthLayout = ({ children, title, subtitle, imageSide = 'right' }: A
               <HiArrowLeft className="w-4 h-4" /> Back to shop
             </Link>
             <h2 className="text-4xl font-bold mb-4">Join the LAZAK community</h2>
-            <p className="text-white/60 text-lg mb-12 leading-relaxed">Quality kitchen tools for home cooks across the US. Real products, real people, real support.</p>
+            <p className="text-white/60 text-lg mb-12 leading-relaxed">Quality Kitchen and Home Essentials utensilizes for home cooks across the US. Real products, real people, real support.</p>
             <div className="space-y-4">
               {features.map((f, i) => (
                 <motion.div key={i} initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.1 * i }} className="flex items-center gap-3 text-white/80">
