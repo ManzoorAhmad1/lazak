@@ -2,36 +2,36 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const PERKS = [
+const VALUES = [
   {
     num: '01',
-    title: 'Free UK Shipping',
-    body: 'On every order over 50 pounds. No discount code needed, no small print. Delivered straight to your door.',
+    title: 'Chosen with Care',
+    body: 'Nothing enters the LAZAK range without being tested and trusted first. If it would not work in our own homes, it does not go in yours.',
   },
   {
     num: '02',
-    title: '2-Year Warranty',
-    body: 'Every LAZAK product is backed by a full 2-year manufacturer warranty. We stand completely behind what we make.',
+    title: 'Built to Last',
+    body: 'We only carry products made from materials that hold up to daily use. No flimsiness, no short cuts. Quality you can feel on the first day and the five hundredth.',
   },
   {
     num: '03',
-    title: '30-Day Returns',
-    body: 'Changed your mind? Return within 30 days on us. Clean, simple, zero questions asked.',
+    title: 'Honest Value',
+    body: 'Good quality should not mean premium price. We work hard to bring you well-made kitchen and home essentials that respect your budget as much as your home.',
   },
   {
     num: '04',
-    title: '4.8 Star Rating',
-    body: 'Over 10,000 verified customers rate us highly for quality, durability, and fast shipping. Honest reviews only.',
+    title: 'Simple to Live With',
+    body: 'Every product we carry should be easy to use, easy to store, and easy to love. We believe the best home tools are the ones you barely have to think about.',
   },
   {
     num: '05',
-    title: 'UK-Based Support',
-    body: 'Real people answering every message promptly. Our team resolves issues fast and treats every customer with care.',
+    title: 'UK Based, UK Delivered',
+    body: 'We are based in the UK, we understand UK homes, and we ship promptly to your door. Real support from real people who care about your experience.',
   },
   {
     num: '06',
-    title: 'Secure Checkout',
-    body: 'Fully encrypted payments with zero data stored on our servers. Shop with complete confidence every time.',
+    title: 'Your Satisfaction, Always',
+    body: '30-day returns, a 2-year warranty, and a team that actually picks up. Your peace of mind is not a small print item. It is the whole point.',
   },
 ];
 
@@ -40,7 +40,7 @@ export const WhyChooseUs = () => {
     <section className="bg-[#0A0A0A] py-24 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
 
-        {/* Header block */}
+        {/* Header */}
         <div className="grid lg:grid-cols-2 gap-10 items-end mb-20">
           <div>
             <motion.div
@@ -51,7 +51,7 @@ export const WhyChooseUs = () => {
             >
               <div className="w-8 h-[2px] bg-[#34B4FF]" />
               <span className="text-[9px] font-black uppercase tracking-[0.32em] text-[#34B4FF]">
-                Why LAZAK
+                Our Values
               </span>
             </motion.div>
             <motion.h2
@@ -61,8 +61,8 @@ export const WhyChooseUs = () => {
               transition={{ delay: 0.1 }}
               className="text-5xl lg:text-6xl font-black text-white leading-[1.0] tracking-tighter uppercase"
             >
-              Built Around<br />
-              <span className="text-[#34B4FF]">You.</span>
+              Why People<br />
+              <span className="text-[#34B4FF]">Choose LAZAK.</span>
             </motion.h2>
           </div>
           <motion.p
@@ -72,14 +72,15 @@ export const WhyChooseUs = () => {
             transition={{ delay: 0.15 }}
             className="text-white/45 text-lg leading-relaxed max-w-md"
           >
-            Every detail in the LAZAK range is considered from the perspective
-            of the person using it daily. That is how we build and why customers keep coming back.
+            We are not just selling kitchen products. We are committed to
+            making your home life better -- more comfortable, more organised,
+            and a great deal less stressful.
           </motion.p>
         </div>
 
-        {/* Numbered list */}
+        {/* Numbered values list */}
         <div className="border-t border-white/10">
-          {PERKS.map((p, i) => (
+          {VALUES.map((v, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, x: -20 }}
@@ -89,13 +90,13 @@ export const WhyChooseUs = () => {
               className="grid grid-cols-[56px_1fr_1fr] md:grid-cols-[72px_1fr_1fr] gap-6 md:gap-10 py-7 border-b border-white/10 group cursor-default hover:border-[#34B4FF]/40 transition-colors duration-300"
             >
               <span className="text-[11px] font-black uppercase tracking-widest text-white/20 group-hover:text-[#34B4FF] transition-colors duration-300 pt-0.5">
-                {p.num}
+                {v.num}
               </span>
               <h3 className="text-white font-black text-sm uppercase tracking-[0.1em] group-hover:text-[#34B4FF] transition-colors duration-300 pt-0.5">
-                {p.title}
+                {v.title}
               </h3>
               <p className="text-white/40 text-sm leading-relaxed">
-                {p.body}
+                {v.body}
               </p>
             </motion.div>
           ))}

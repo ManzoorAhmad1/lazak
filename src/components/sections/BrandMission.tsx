@@ -1,0 +1,73 @@
+﻿'use client';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { HiArrowRight } from 'react-icons/hi2';
+import Link from 'next/link';
+
+export const BrandMission = () => {
+  return (
+    <section className="bg-white py-24 lg:py-32">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+
+          {/* Left: image */}
+          <motion.div
+            initial={{ clipPath: 'inset(0 0 0 100%)' }}
+            whileInView={{ clipPath: 'inset(0 0 0 0)' }}
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
+            className="relative overflow-hidden min-h-[480px] lg:min-h-[560px] bg-[#F5F5F3]"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=1000&q=90&auto=format&fit=crop"
+              alt="Who We Are - LAZAK Home Essentials"
+              className="absolute inset-0 w-full h-full object-cover"
+              style={{ filter: 'brightness(1.05) saturate(1.1)' }}
+            />
+          </motion.div>
+
+          {/* Right: text */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 0.65, delay: 0.2 }}
+          >
+            <div className="flex items-center gap-3 mb-8">
+              <div className="w-8 h-[2px] bg-[#34B4FF]" />
+              <span className="text-[9px] font-black uppercase tracking-[0.32em] text-[#34B4FF]">
+                Who We Are
+              </span>
+            </div>
+
+            <h2 className="text-4xl lg:text-5xl font-black text-[#1A1A1A] tracking-tighter uppercase leading-[1.0] mb-8">
+              Made for<br />
+              <span className="text-[#34B4FF]">Real Homes.</span>
+            </h2>
+
+            <p className="text-gray-500 text-lg leading-relaxed mb-6">
+              LAZAK was built around one simple belief: the tools you use every
+              day in your home should feel good, work well, and last long. We are
+              not about trends. We are about the quiet confidence of a well-made
+              thing that simply works.
+            </p>
+
+            <p className="text-gray-500 text-lg leading-relaxed mb-10">
+              Every product in our kitchen and home range has been chosen with
+              care, tested in real homes, and designed to make daily life a
+              little less complicated and a great deal more comfortable.
+            </p>
+
+            <Link href="/products">
+              <button className="inline-flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.22em] text-[#1A1A1A] border-b-2 border-[#1A1A1A] pb-1 hover:text-[#34B4FF] hover:border-[#34B4FF] transition-colors duration-300 group">
+                Our Products
+                <HiArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-200" />
+              </button>
+            </Link>
+          </motion.div>
+
+        </div>
+      </div>
+    </section>
+  );
+};

@@ -11,7 +11,7 @@ interface LogoProps {
 export const Logo: React.FC<LogoProps> = ({ className, size = 'md', variant = 'default' }) => {
   return (
     <Link href="/" className={cn('flex items-center', className)}>
-      <img src="/logo.jpeg" alt="LAZAK" className="w-[120px] h-20 object-contain" />
+      <img src="/LA-Logo.png" alt="LAZAK" className="w-[120px] h-20 object-contain" />
     </Link>
   );
 };
