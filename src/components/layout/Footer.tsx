@@ -12,7 +12,7 @@ export const Footer = () => {
 
           {/* Brand */}
           <div className="space-y-5">
-            <Logo />
+             <img src="/black logo.png" alt="LAZAK" className="w-[120px] h-20 object-contain" />
             <p className="text-white/40 text-sm leading-relaxed">
               Kitchen accessories made for people who actually cook.
             </p>

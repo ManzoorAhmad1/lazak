@@ -146,7 +146,7 @@ export default function HomePage() {
           {/* Right: clean kitchen image */}
           <div className="relative overflow-hidden min-h-[400px]">
             <img
-              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1000&q=85&auto=format&fit=crop"
+              src="/image4.jpg"
               alt="Kitchen and Home Essentials"
               className="absolute inset-0 w-full h-full object-cover"
               style={{ filter: 'brightness(0.95) saturate(1.1)' }}

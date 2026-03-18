@@ -4,21 +4,21 @@ import { motion } from 'framer-motion';
 
 const PILLARS = [
   {
-    image: 'https://images.unsplash.com/photo-1565183928294-7063f23ce0f8?w=800&q=85&auto=format&fit=crop',
+    image: '/image1.jpg',
     tag: 'Your Kitchen',
     heading: 'A Kitchen That Works For You',
     body: 'When your kitchen tools are thoughtfully designed, cooking stops feeling like a chore. The right essentials create a space that flows, feels clean, and makes every meal easier to put together.',
     bright: true,
   },
   {
-    image: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=85&auto=format&fit=crop',
+    image: '/image copy 4.png',
     tag: 'Your Home',
     heading: 'A Home Worth Coming Back To',
     body: 'Home should feel like a place of comfort. The small things -- a well-organised shelf, a mat that holds its ground, a rack that tucks away neatly -- all add up to a home that breathes.',
     bright: false,
   },
   {
-    image: 'https://images.unsplash.com/photo-1556909948-ce6b8b637d5b?w=800&q=85&auto=format&fit=crop',
+    image: '/image copy 2.png',
     tag: 'Your Life',
     heading: 'Less Effort. More Living.',
     body: 'We choose every product in our range by asking one question: does this genuinely make life easier? If the answer is yes, it earns its place. That is how we take care of you.',
@@ -87,7 +87,7 @@ export const LifestylePillars = () => {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   style={{ filter: 'brightness(1.05) saturate(1.1)' }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A]/60 to-transparent" />
+               
                 <div className="absolute bottom-5 left-5">
                   <span className="text-[8px] font-black uppercase tracking-[0.25em] text-white/70 bg-white/10 backdrop-blur-sm px-3 py-1.5 border border-white/20">
                     {p.tag}

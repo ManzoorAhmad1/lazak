@@ -28,7 +28,7 @@ export const Hero = () => {
           >
             <div className="w-8 h-[2px] bg-[#34B4FF]" />
             <span className="text-[9px] font-black uppercase tracking-[0.35em] text-[#34B4FF]">
-              Kitchen and Home Essentials
+             Comfort with Care.
             </span>
           </motion.div>
 
@@ -40,7 +40,7 @@ export const Hero = () => {
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="text-[clamp(3.4rem,7vw,6.2rem)] font-black leading-[0.92] tracking-tighter text-[#1A1A1A] uppercase"
             >
-              Comfort
+                Kitchen 
             </motion.h1>
           </div>
           <div className="overflow-hidden mb-1">
@@ -51,7 +51,7 @@ export const Hero = () => {
               className="text-[clamp(3.4rem,7vw,6.2rem)] font-black leading-[0.92] tracking-tighter uppercase"
               style={{ WebkitTextStroke: '2px #1A1A1A', color: 'transparent' }}
             >
-              with
+             and Home
             </motion.h1>
           </div>
           <div className="overflow-hidden mb-10">
@@ -61,7 +61,7 @@ export const Hero = () => {
               transition={{ duration: 0.8, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
               className="text-[clamp(3.4rem,7vw,6.2rem)] font-black leading-[0.92] tracking-tighter text-[#34B4FF] uppercase"
             >
-              Care.
+               Essentials.
             </motion.h1>
           </div>
 
@@ -129,7 +129,7 @@ export const Hero = () => {
           className="relative overflow-hidden min-h-[60vw] lg:min-h-0 order-1 lg:order-2"
         >
           <img
-            src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=90&auto=format&fit=crop"
+            src="/image1.png"
             alt="Bright modern kitchen - LAZAK Kitchen and Home Essentials"
             className="absolute inset-0 w-full h-full object-cover"
             style={{ filter: 'brightness(1.05) saturate(1.1)' }}
