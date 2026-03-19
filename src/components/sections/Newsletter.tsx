@@ -19,6 +19,27 @@ export const Newsletter = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
+          {/* Left: Heading */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="space-y-5"
+          >
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-[2px] bg-[#34B4FF]" />
+              <span className="text-[15px] font-black uppercase tracking-[0.32em] text-[#34B4FF]">Stay Updated</span>
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-black text-white tracking-tighter uppercase leading-[1.0]">
+              Get Exclusive<br />
+              <span className="text-[#34B4FF]">Offers.</span>
+            </h2>
+            <p className="text-white/40 text-base leading-relaxed max-w-sm">
+              Subscribe for deals, new arrivals, and home tips — delivered straight to your inbox.
+            </p>
+          </motion.div>
+
           {/* Right: Form */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}

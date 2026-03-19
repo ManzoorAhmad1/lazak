@@ -78,7 +78,7 @@ export const WhyChooseUs = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.06, duration: 0.5 }}
-              className="grid grid-cols-[56px_1fr_1fr] md:grid-cols-[72px_1fr_1fr] gap-6 md:gap-10 py-7 border-b border-white/10 group cursor-default hover:border-[#34B4FF]/40 transition-colors duration-300"
+              className="grid grid-cols-[40px_1fr] md:grid-cols-[72px_1fr_1fr] gap-x-4 gap-y-2 md:gap-10 py-7 border-b border-white/10 group cursor-default hover:border-[#34B4FF]/40 transition-colors duration-300"
             >
               <span className="text-[11px] font-black uppercase tracking-widest text-white/20 group-hover:text-[#34B4FF] transition-colors duration-300 pt-0.5">
                 {v.num}
@@ -86,7 +86,7 @@ export const WhyChooseUs = () => {
               <h3 className="text-white font-black text-sm uppercase tracking-[0.1em] group-hover:text-[#34B4FF] transition-colors duration-300 pt-0.5">
                 {v.title}
               </h3>
-              <p className="text-white/40 text-sm leading-relaxed">
+              <p className="text-white/40 text-sm leading-relaxed col-span-2 md:col-span-1">
                 {v.body}
               </p>
             </motion.div>

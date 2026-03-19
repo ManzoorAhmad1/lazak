@@ -37,7 +37,7 @@ export const FeatureSection = () => {
       {ROWS.map((row, i) => (
         <div
           key={i}
-          className="grid lg:grid-cols-2 min-h-[600px] border-b border-gray-100 last:border-0"
+          className="grid lg:grid-cols-2 lg:min-h-[600px] border-b border-gray-100 last:border-0"
         >
           {/* Image panel with clip-path wipe */}
           <motion.div
@@ -47,7 +47,7 @@ export const FeatureSection = () => {
             whileInView={{ clipPath: 'inset(0 0 0 0)' }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-            className={`relative overflow-hidden bg-[#F2F2F0] min-h-[420px] ${
+            className={`relative overflow-hidden bg-[#F2F2F0] min-h-[260px] md:min-h-[420px] ${
               row.imageLeft ? 'lg:order-1' : 'lg:order-2'
             }`}
           >

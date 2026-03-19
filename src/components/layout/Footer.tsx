@@ -8,7 +8,7 @@ export const Footer = () => {
   return (
     <footer className="bg-secondary text-white">
       <div className="container mx-auto px-6 lg:px-8 py-16">
-        <div className="flex flex-col md:flex-row justify-between items-start">
+        <div className="flex flex-col md:flex-row justify-between items-start gap-10 md:gap-0">
 
           {/* Brand */}
           <div className="space-y-5">

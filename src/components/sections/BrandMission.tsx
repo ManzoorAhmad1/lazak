@@ -15,7 +15,7 @@ export const BrandMission = () => {
             whileInView={{ clipPath: 'inset(0 0 0 0)' }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
-            className="relative h-full min-h-[480px] lg:min-h-[560px] bg-[#F5F5F3]"
+            className="relative h-full min-h-[280px] md:min-h-[420px] lg:min-h-[560px] bg-[#F5F5F3]"
           >
             <img
               src="/image copy 6.png"

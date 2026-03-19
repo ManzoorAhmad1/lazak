@@ -12,9 +12,9 @@ export default function ContactPage() {
   const sectionVariants = { initial: { opacity: 0, y: 40 }, whileInView: { opacity: 1, y: 0 }, transition: { duration: 0.8, ease: "easeOut" } };
   const faqs = [
     { q: 'How fast does my order ship?', a: 'Most orders are dispatched within one business day. Standard delivery takes 3–5 days across the continental US. Orders over $50 ship completely free.' },
-    { q: 'What if I want to return something?', a: 'Easy. Contact us within 30 days of receiving your order and we\'ll send over a prepaid return label — no cost to you, no awkward questions.' },
+    { q: 'What if I want to return something?', a: 'Easy. Contact us within 30 days of receiving your order and we will send over a prepaid return label — no cost to you, no awkward questions.' },
     { q: 'Do you ship outside the US?', a: "Right now we only ship within the United States. We're working on expanding internationally, so check back soon if you're outside the US." },
-    { q: 'Is there a warranty on LAZAK products?', a: 'Yes. Every product we sell comes with a 2-year warranty covering manufacturing defects. If something goes wrong, reach out and we\'ll make it right.' }
+    { q: 'Is there a warranty on LAZAK products?', a: 'Yes. Every product we sell comes with a 2-year warranty covering manufacturing defects. If something goes wrong, reach out and we will make it right.' }
   ];
   const contactItems = [
     { icon: HiEnvelope, title: 'Email Us', content: ['info@lazakcare.com'], color: 'primary' },
@@ -29,8 +29,8 @@ export default function ContactPage() {
           <motion.div {...sectionVariants} viewport={{ once: true }} className="space-y-12">
             <div className="space-y-6">
               <Badge variant="primary">Contact Us</Badge>
-              <h1 className="text-4xl md:text-6xl font-medium tracking-tight">Let\'s talk</h1>
-              <p className="text-text-muted text-lg leading-relaxed max-w-xl">Got a question about a product, an order, or just want to know if something is the right fit for you? We\'re a real team and we actually respond.</p>
+              <h1 className="text-4xl md:text-6xl font-medium tracking-tight">Let's talk</h1>
+              <p className="text-text-muted text-lg leading-relaxed max-w-xl">Got a question about a product, an order, or just want to know if something is the right fit for you? We are a real team and we actually respond.</p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
               {contactItems.map((item, idx) => (

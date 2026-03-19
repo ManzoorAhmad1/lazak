@@ -53,13 +53,13 @@ function ProductsContent() {
     <main className="pt-32 pb-20 bg-background min-h-screen">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div className="flex flex-col md:flex-row gap-10" initial="initial" animate="whileInView" variants={{ initial: { opacity: 0 }, whileInView: { opacity: 1, transition: { staggerChildren: 0.1 } } }}>
-          <motion.aside variants={sectionVariants} className="w-full md:w-64 space-y-8 shrink-0">
+          <motion.aside variants={sectionVariants} className="w-full md:w-64 space-y-8 shrink-0 md:sticky md:top-24 self-start">
             <div className="space-y-4">
               <h3 className="font-medium text-lg border-b border-muted/10 pb-2">Categories</h3>
-              <div className="flex flex-col gap-2">
-                <button onClick={() => handleCategoryChange('all')} className={`text-left px-3 py-2 rounded-md transition-colors text-sm font-medium ${selectedCategory === 'all' ? 'bg-primary text-white' : 'hover:bg-muted/10 text-text-muted'}`}>All Products</button>
+              <div className="flex gap-2 overflow-x-auto pb-1 [&::-webkit-scrollbar]:hidden md:flex-col md:overflow-visible md:pb-0">
+                <button onClick={() => handleCategoryChange('all')} className={`shrink-0 text-left px-3 py-2 rounded-md transition-colors text-sm font-medium ${selectedCategory === 'all' ? 'bg-primary text-white' : 'hover:bg-muted/10 text-text-muted'}`}>All Products</button>
                 {CATEGORIES.map(cat => (
-                  <button key={cat.id} onClick={() => handleCategoryChange(cat.slug)} className={`text-left px-3 py-2 rounded-md transition-colors text-sm font-medium ${selectedCategory === cat.slug ? 'bg-primary text-white' : 'hover:bg-muted/10 text-text-muted'}`}>{cat.name}</button>
+                  <button key={cat.id} onClick={() => handleCategoryChange(cat.slug)} className={`shrink-0 text-left px-3 py-2 rounded-md transition-colors text-sm font-medium ${selectedCategory === cat.slug ? 'bg-primary text-white' : 'hover:bg-muted/10 text-text-muted'}`}>{cat.name}</button>
                 ))}
               </div>
             </div>
