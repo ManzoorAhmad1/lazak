@@ -1,77 +1,53 @@
 'use client';
 import { motion } from 'framer-motion';
-import { BLOG_ARTICLES } from '@/data/products';
-import { Card } from '@/components/ui/Card';
+import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/Badge';
-import { HiCalendarDays, HiUser, HiArrowRight } from 'react-icons/hi2';
+import { HiBell, HiArrowLeft } from 'react-icons/hi2';
 import Link from 'next/link';
 
 export default function BlogPage() {
-  const sectionVariants = {
-    initial: { opacity: 0, y: 40 },
-    whileInView: { opacity: 1, y: 0 },
-    transition: { duration: 0.8, ease: "easeOut" }
-  };
-
   return (
-    <main className="pt-32 pb-20 bg-background min-h-screen">
+    <main className="pt-32 pb-20 bg-background min-h-[80vh] flex items-center justify-center">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div 
-          {...sectionVariants}
-          viewport={{ once: true }}
-          className="text-center max-w-2xl mx-auto mb-16 space-y-4"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-center max-w-2xl mx-auto space-y-8"
         >
-          <Badge variant="secondary">LAZAK Blog</Badge>
-          <h1 className="text-4xl md:text-5xl font-medium">From Our Kitchen to Yours</h1>
-          <p className="text-text-muted">Recipes, tips, and honest thoughts on making the most of your kitchen setup.</p>
+          <div className="flex justify-center">
+            <Badge variant="secondary" className="px-4 py-1 text-xs uppercase tracking-[0.2em]">Coming Soon</Badge>
+          </div>
+          
+          <div className="space-y-4">
+            <h1 className="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-none text-text-main">
+              Our Blog is <br />
+              <span className="text-primary">Coming Soon</span>
+            </h1>
+            <p className="text-text-muted text-lg md:text-xl font-medium max-w-lg mx-auto leading-relaxed">
+              Stay tuned for updates, tips, and news about Kitchen & Home Essentials.
+            </p>
+          </div>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
+            <Link href="/contact">
+            <Button size="lg" className="rounded-none px-10 h-16 text-sm font-black uppercase tracking-widest gap-3 shadow-xl">
+              <HiBell className="w-5 h-5" /> Notify Me
+            </Button>
+            </Link>
+            <Link href="/">
+              <Button variant="outline" size="lg" className="rounded-none px-10 h-16 text-sm font-black uppercase tracking-widest gap-3 border-muted/20">
+                <HiArrowLeft className="w-5 h-5" /> Back to Home
+              </Button>
+            </Link>
+          </div>
+
+          <div className="pt-12 flex justify-center gap-8 text-text-muted/30">
+             <div className="w-12 h-px bg-current" />
+             <div className="w-2 h-2 rounded-full bg-current" />
+             <div className="w-12 h-px bg-current" />
+          </div>
         </motion.div>
-        
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {BLOG_ARTICLES.map((article, index) => (
-            <motion.div 
-              key={article.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-            >
-              <Card className="flex flex-col md:flex-row h-full rounded-[24px] shadow-soft border-muted/5 overflow-hidden group hover:shadow-medium transition-all duration-300">
-                <div className="md:w-[40%] h-64 md:h-auto overflow-hidden relative">
-                  <img 
-                    src={article.image} 
-                    alt={article.title} 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    referrerPolicy="no-referrer"
-                  />
-                  <div className="absolute top-4 left-4">
-                    <Badge variant="primary" className="bg-white/90 backdrop-blur-md text-primary border-none shadow-sm">
-                      {article.date.split(',')[0]}
-                    </Badge>
-                  </div>
-                </div>
-                <div className="md:w-[60%] p-8 flex flex-col justify-between">
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-4 text-[10px] text-text-muted font-medium uppercase tracking-widest">
-                      <span className="flex items-center gap-1.5"><HiCalendarDays className="w-3 h-3 text-primary" /> {article.date}</span>
-                      <span className="flex items-center gap-1.5"><HiUser className="w-3 h-3 text-primary" /> {article.author}</span>
-                    </div>
-                    <h2 className="text-2xl font-medium leading-tight group-hover:text-primary transition-colors">
-                      <Link href={`/blog/${article.slug}`}>{article.title}</Link>
-                    </h2>
-                    <p className="text-text-muted line-clamp-3 text-sm leading-relaxed">
-                      {article.excerpt}
-                    </p>
-                  </div>
-                  <div className="pt-6">
-                    <Link href={`/blog/${article.slug}`} className="inline-flex items-center gap-2 text-primary font-medium hover:gap-3 transition-all text-sm uppercase tracking-widest">
-                      Read Article <HiArrowRight className="w-4 h-4" />
-                    </Link>
-                  </div>
-                </div>
-              </Card>
-            </motion.div>
-          ))}
-        </div>
       </div>
     </main>
   );
