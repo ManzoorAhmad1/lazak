@@ -24,8 +24,8 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'rack-standard',
-    slug: 'lazak-foldable-dish-drying-mat-large',
-    title: 'LAZAK Foldable Dish Drying Mat - Large',
+    slug: 'lazak-foldable-dish-drying-mat',
+    title: 'LAZAK Foldable Dish Drying Mat',
     price: 44.99,
     description: 'Wider mat fits more dishes in one load. Same aluminum build, same anti-slip base, more room.',
     fullDescription: 'Everything you love about the standard mat, scaled up. The Large fits full-size dinner plates, bowls, pots, and cups in a single layout without crowding.\n\nAluminum slat construction allows fast air drying. Folds flat in seconds for compact storage. Anti-slip silicone feet keep it gripped on any countertop surface.\n\nIncludes scrubbing pad, cleaning guide, and silicone mat.',
@@ -41,8 +41,8 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'rack-premium',
-    slug: 'lazak-foldable-dish-drying-mat-pro-xl',
-    title: 'LAZAK Dish Drying Mat - Pro XL',
+    slug: 'lazak-foldable-dish-drying-mat',
+    title: 'LAZAK Dish Drying Mat',
     price: 59.99,
     description: 'Maximum capacity for larger households. Extra-wide frame, premium slat spacing, included silicone trivet.',
     fullDescription: 'The Pro XL is built for Kitchen and Home Essentials that do serious cooking. It handles a full dish load with room to spare, and the reinforced aluminum frame holds heavy pots and cast iron without flexing.\n\nExtra-wide slat spacing lets water drain quickly so nothing stays damp. Folds down thin for easy storage. The included silicone trivet doubles as a pot holder.\n\nIncludes silicone trivet, two scrubbing pads, cleaning guide, and extended anti-slip base.',

@@ -10,7 +10,7 @@ const PILLARS = [
     bright: true,
   },
   {
-    image: '/image copy 4.png',
+    image: '/images.jpg',
     tag: 'Your Home',
     heading: 'Where Every Kitchen Feels Like Home',
     bright: false,

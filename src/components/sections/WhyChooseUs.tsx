@@ -21,7 +21,7 @@ const VALUES = [
   {
     num: '04',
     title: 'Simple to Live With',
-    body: 'Every product we carry should be easy to use, easy to store, and easy to love. We believe the best home utensilizes are the ones you barely have to think about.',
+    body: 'Every product we carry should be easy to use, easy to store, We believe the best home utensilizes are the ones you barely have to think about.',
   },
   
 ];

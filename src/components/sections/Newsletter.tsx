@@ -19,22 +19,6 @@ export const Newsletter = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-          {/* Left: Heading */}
-          <div>
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="flex items-center gap-3 mb-7"
-            >
-              <div className="w-8 h-[2px] bg-[#34B4FF]" />
-              <span className="text-[15px] font-black uppercase tracking-[0.32em] text-[#34B4FF]">
-                Newsletter
-              </span>
-            </motion.div>
-        
-          </div>
-
           {/* Right: Form */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
