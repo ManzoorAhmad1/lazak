@@ -29,7 +29,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, index = 0 }) 
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
           referrerPolicy="no-referrer" 
         />
-        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        
       </div>
 
       {/* Content Section */}
@@ -40,22 +40,12 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, index = 0 }) 
         </h3>
         
         {/* Description Paragraph */}
-        <p className="text-gray-600 leading-relaxed mb-6 line-clamp-3">
+        <p className="text-gray-600 leading-relaxed mb-3 line-clamp-3">
           {product.description}
         </p>
 
         {/* View Product Button */}
-        <div className="mt-auto">
-          <Link href={`/products/${product.slug}`}>
-            <Button 
-              variant="outline" 
-              className="w-full rounded-[10px] uppercase tracking-widest text-xs font-medium h-11 border-2 hover:bg-primary hover:text-white hover:border-primary transition-all duration-300"
-            >
-              <HiEye className="w-4 h-4 mr-2" />
-              View Product
-            </Button>
-          </Link>
-        </div>
+       
       </div>
     </motion.div>
   );
