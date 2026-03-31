@@ -58,8 +58,7 @@ export default function HomePage() {
             transition={{ duration: 0.7 }}
             className="text-[clamp(1.6rem,3.5vw,3rem)] font-black text-white leading-[1.2] tracking-tighter uppercase"
           >
-             Your comfort and care are our top priority.
-          </motion.p>
+            Making your life more comfortable with style and thoughtful design.          </motion.p>
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -87,7 +86,7 @@ export default function HomePage() {
       </motion.div>
 
 
-      
+
 
       {/* 9. Newsletter */}
       <motion.div {...fadeUp}>

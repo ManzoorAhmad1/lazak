@@ -6,24 +6,24 @@ const VALUES = [
   {
     num: '01',
     title: 'Chosen with Care',
-    body: 'Nothing enters the LAZAK range without being tested and trusted first. If it would not work in our own homes, it does not go in yours.',
+    body: 'Every product we carry is tested and trusted before it ever reaches you. If we wouldn’t use it in our own homes, we won’t ask you to. That’s what makes us a trusted kitchenware brand.',
   },
   {
     num: '02',
     title: 'Built to Last',
-    body: 'We only carry products made from materials that hold up to daily use. No flimsiness, no short cuts. Quality you can feel on the first day and the five hundredth.',
+    body: ' We select high-quality home goods that hold up to daily life—no flimsiness, no shortcuts. Just long-lasting kitchen essentials you can feel on day one and years later.',
   },
   {
     num: '03',
     title: 'Honest Value',
-    body: 'Good quality should not mean premium price. We work hard to bring you well-made kitchen and home essentials that respect your budget as much as your home.',
+    body: 'Good quality shouldn’t come with a premium price tag. We work hard to bring you affordable home essentials that respect your home and your budget.',
   },
   {
     num: '04',
     title: 'Simple to Live With',
-    body: 'Every product we carry should be easy to use, easy to store, We believe the best home utensilizes are the ones you barely have to think about.',
+    body: 'With Our products are designed to be easy to use, easy to store, and easy to love. The best home lifestyle products are the ones you never have to struggle with.',
   },
-  
+
 ];
 
 export const WhyChooseUs = () => {
@@ -63,9 +63,10 @@ export const WhyChooseUs = () => {
             transition={{ delay: 0.15 }}
             className="text-white/45 text-lg leading-relaxed max-w-md"
           >
-            We are not just selling Kitchen and Home Essentials products. We are committed to
-            making your home life better -- more comfortable, more organised,
-            and a great deal less stressful.
+            We’re not just here to sell products—we’re here to help make your home life better.
+            Whether you’re cooking a family meal, tidying up after a long day,
+            or simply looking for ways to bring more ease into your routine,
+            LAZAK is designed to support you every step of the way with multi-purpose kitchen helpers and space-saving solutions.
           </motion.p>
         </div>
 

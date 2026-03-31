@@ -27,8 +27,8 @@ export const Hero = () => {
             className="flex items-center gap-3 mb-6 lg:mb-10"
           >
             <div className="w-8 h-[2px] bg-[#34B4FF]" />
-            <span className="text-[15px] font-black uppercase tracking-[0.35em] text-[#34B4FF]">     
-             Comfort with Care.
+            <span className="text-[15px] font-black uppercase tracking-[0.35em] text-[#34B4FF]">
+              Comfort with Care.
             </span>
           </motion.div>
 
@@ -40,30 +40,9 @@ export const Hero = () => {
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="text-[clamp(1.8rem,7vw,6.2rem)] font-black leading-[0.92] tracking-tighter text-[#1A1A1A] uppercase"
             >
-                Kitchen and Home Essentials 
+             Better Essentials for a Better Home
             </motion.h1>
-          </div>
-          <div className="overflow-hidden mb-1">
-            <motion.h1
-              initial={{ y: '105%' }}
-              animate={{ y: 0 }}
-              transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="text-[clamp(1.8rem,7vw,6.2rem)] font-black leading-[0.92] tracking-tighter uppercase"
-              style={{ WebkitTextStroke: '2px #1A1A1A', color: 'transparent' }}
-            >
-             and Home
-            </motion.h1>
-          </div>
-          <div className="overflow-hidden mb-10">
-            <motion.h1
-              initial={{ y: '105%' }}
-              animate={{ y: 0 }}
-              transition={{ duration: 0.8, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
-              className="text-[clamp(1.8rem,7vw,6.2rem)] font-black leading-[0.92] tracking-tighter text-[#34B4FF] uppercase"
-            >
-               Essentials.
-            </motion.h1>
-          </div>
+          </div>        
 
           {/* Subtext */}
           <motion.p
@@ -72,12 +51,10 @@ export const Hero = () => {
             transition={{ duration: 0.6, delay: 0.38 }}
             className="text-gray-500 text-base md:text-lg leading-relaxed max-w-[420px] mb-6 md:mb-10"
           >
-            Thoughtfully made Kitchen and Home Essentials and home essentials that simplify your daily
-            routine, reduce the mess, and turn your house into a place that
-            truly feels like home.
+            Thoughtfully designed kitchen and home essentials that make daily routines easier, reduce clutter, and help transform your house into a warm and welcoming home.
           </motion.p>
 
-         
+
         </div>
 
         {/* RIGHT: Bright Unsplash kitchen image - clip-path wipe reveal */}

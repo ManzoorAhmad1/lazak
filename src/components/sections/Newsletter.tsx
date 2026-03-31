@@ -36,7 +36,7 @@ export const Newsletter = () => {
               <span className="text-[#34B4FF]">Offers.</span>
             </h2>
             <p className="text-white/40 text-base leading-relaxed max-w-sm">
-              Subscribe for deals, new arrivals, and home tips — delivered straight to your inbox.
+              Subscribe to receive special deals, new arrivals, and helpful home tips delivered straight to your inbox. No spam—unsubscribe anytime
             </p>
           </motion.div>
 

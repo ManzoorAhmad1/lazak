@@ -1,5 +1,5 @@
 ﻿'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { HiEye } from 'react-icons/hi2';
@@ -12,6 +12,7 @@ interface ProductCardProps {
 }
 
 export const ProductCard: React.FC<ProductCardProps> = ({ product, index = 0 }) => {
+  const [expanded, setExpanded] = useState(false);
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -40,9 +41,15 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, index = 0 }) 
         </h3>
         
         {/* Description Paragraph */}
-        <p className="text-gray-600 leading-relaxed mb-3 line-clamp-3">
+        <p className={`text-gray-600 leading-relaxed mb-1 ${expanded ? '' : 'line-clamp-3'}`}>
           {product.description}
         </p>
+        <button
+          onClick={() => setExpanded(!expanded)}
+          className="text-[#34B4FF] text-sm font-semibold mb-3 text-left hover:underline focus:outline-none"
+        >
+          {expanded ? 'See less' : 'See more'}
+        </button>
 
         {/* View Product Button */}
        

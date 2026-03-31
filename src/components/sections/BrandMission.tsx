@@ -42,16 +42,13 @@ export const BrandMission = () => {
               </div>
 
               <h2 className="text-4xl lg:text-5xl font-black text-[#1A1A1A] tracking-tighter uppercase leading-[1.0] mb-8">
-                Made for 
+                Made for
                 <span className="text-[#34B4FF] ms-3">comfort.</span>
               </h2>
 
               <p className="text-gray-500 text-lg leading-relaxed mb-6">
-                It is not just about trends, it's about bringing comfort with care.
+                At LAZAK, we believe a well-kept home starts with durable kitchen tools that work with you, not against you. Our focus isn’t on fleeting trends—it’s on bringing lasting comfort and thoughtful care into your everyday life through premium home essentials. Your comfort and peace of mind are always our top priority.
               </p>
-
-             
-
               <Link href="/products">
                 <button className="inline-flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.22em] text-[#1A1A1A] border-b-2 border-[#1A1A1A] pb-1 hover:text-[#34B4FF] hover:border-[#34B4FF] transition-colors duration-300 group">
                   Our Products
