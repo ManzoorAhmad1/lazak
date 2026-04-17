@@ -40,7 +40,7 @@ export const Hero = () => {
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="text-[clamp(1.8rem,7vw,6.2rem)] font-black leading-[0.92] tracking-tighter text-[#1A1A1A] uppercase"
             >
-             Better Essentials for a Better Home
+              KITCHEN AND HOME ESSENTIALS
             </motion.h1>
           </div>        
 
@@ -70,8 +70,6 @@ export const Hero = () => {
             className="absolute inset-0 w-full h-full object-cover"
             style={{ filter: 'brightness(1.05) saturate(1.1)' }}
           />
-          {/* Subtle dark overlay on left edge for depth */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-transparent" />
 
           {/* Floating tag */}
           <motion.div

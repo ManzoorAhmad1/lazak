@@ -1,7 +1,7 @@
 import { Product, BlogArticle, Category } from '../types/product';
 
 export const CATEGORIES: Category[] = [
-  { id: 'c1', slug: 'dish-drying-mat', name: 'Dish Drying mate', icon: 'Grid', image: '/lazak dry dish mat-1.png' },
+  { id: 'c1', slug: 'dish-drying-mat', name: 'Dish Drying mat', icon: 'Grid', image: '/lazak dry dish mat-2.png' },
 ];
 
 export const PRODUCTS: Product[] = [
@@ -11,9 +11,9 @@ export const PRODUCTS: Product[] = [
     slug: 'lazak-foldable-dish-drying-mat-standard',
     title: 'LAZAK Foldable Dish Drying Mat',
     price: 29.99,
-    description: 'A space-saving essential that dries dishes quickly and stays put. The foldable design tucks away when not in use, while the sturdy aluminum frame and non-slip base keep everything secure—even with a full load.',
+    description: 'Maximize your kitchen space with this innovative dish drying rack, designed for both efficiency and convenience. Its foldable design allows for easy storage when not in use, while the durable and non-slip base ensures stability, even with a full load. Enjoy quick drying and reliable performance every time.',
     fullDescription: 'The LAZAK Foldable Dish Drying Mat brings smart design to your sink routine. Its open-slat aluminum frame lets air circulate freely so dishes dry faster without pooling water underneath.\n\nBuilt from food-grade aluminum alloy, it handles daily use without rusting, warping, or bending. When you are done, it folds flat for a drawer or hangs on a hook.\n\nIncludes silicone anti-slip feet and a small scrubbing pad.',
-    image: '/lazak dry dish mat-1.png',
+    image: '/lazak dry dish mat-2.png',
     rating: 4.6,
     reviews: 84,
     categories: ['dish-drying-mat', 'indoor-outdoor', 'budget-friendly'],
@@ -27,7 +27,7 @@ export const PRODUCTS: Product[] = [
     slug: 'lazak-foldable-dish-drying-mat',
     title: 'LAZAK Foldable Dish Drying Mat',
     price: 44.99,
-    description: 'Need more space? This wider mat fits larger dishes in a single load, so you can wash more and dry more without waiting. Same durable aluminum construction and anti-slip base—just more room to spread out.',
+    description: 'Maximize your dish-drying capacity with our expanded mat—perfect for larger loads and bigger dishes. Wash and dry more in a single cycle, saving you time and effort. Enjoy the same durable  and anti-slip base, now with even more space to keep your kitchen organized and efficient.',
     fullDescription: 'Everything you love about the standard mat, scaled up. The Large fits full-size dinner plates, bowls, pots, and cups in a single layout without crowding.\n\nAluminum slat construction allows fast air drying. Folds flat in seconds for compact storage. Anti-slip silicone feet keep it gripped on any countertop surface.\n\nIncludes scrubbing pad, cleaning guide, and silicone mat.',
     image: '/lazak dry dish mat-2.png',
     rating: 4.8,
@@ -44,7 +44,7 @@ export const PRODUCTS: Product[] = [
     slug: 'lazak-foldable-dish-drying-mat',
     title: 'LAZAK Dish Drying Mat',
     price: 59.99,
-    description: 'Designed for families or anyone who cooks often. The extra-wide frame and thoughtfully spaced slats allow water to drain quickly while keeping plates, bowls, and cups neatly organized. Complete with a convenient accessory tray for utensils.',
+    description: 'Perfect for families and avid home cooks, this dish rack features an extra-wide frame and strategically spaced slats to ensure rapid drainage and optimal organization of plates, bowls, and cups. It also includes a convenient utensil tray, making your kitchen routine more efficient and clutter-free.',
     fullDescription: 'The Pro XL is built for Kitchen and Home Essentials that do serious cooking. It handles a full dish load with room to spare, and the reinforced aluminum frame holds heavy pots and cast iron without flexing.\n\nExtra-wide slat spacing lets water drain quickly so nothing stays damp. Folds down thin for easy storage. The included silicone trivet doubles as a pot holder.\n\nIncludes silicone trivet, two scrubbing pads, cleaning guide, and extended anti-slip base.',
     image: '/Lazak Dish Dry mat-5.png',
     rating: 4.9,
@@ -56,8 +56,8 @@ export const PRODUCTS: Product[] = [
     tier: 'premium',
     hasFreeShipping: true
   },
-  
-  
+
+
 ];
 
 export const BLOG_ARTICLES: BlogArticle[] = [
@@ -67,7 +67,7 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     title: 'How to Store Food the Right Way',
     excerpt: 'Good storage keeps ingredients fresh longer and cuts down on waste. Here are the methods that actually make a difference at home.',
     date: 'March 2, 2026',
-    image: '/lazak dry dish mat-1.png',
+    image: '/lazak dry dish mat-2.png',
     author: 'Marcus T.'
   },
   {

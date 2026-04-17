@@ -47,8 +47,7 @@ export const BrandMission = () => {
               </h2>
 
               <p className="text-gray-500 text-lg leading-relaxed mb-6">
-                At LAZAK, we believe a well-kept home starts with durable kitchen tools that work with you, not against you. Our focus isn’t on fleeting trends—it’s on bringing lasting comfort and thoughtful care into your everyday life through premium home essentials. Your comfort and peace of mind are always our top priority.
-              </p>
+                At LAZAK, we believe that a well-kept home begins with reliable kitchen tools designed to support you every day. Rather than chasing short-lived trends, we are dedicated to delivering lasting comfort and thoughtful care with premium home essentials. Your comfort and peace of mind will always be at the heart of what we do.              </p>
               <Link href="/products">
                 <button className="inline-flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.22em] text-[#1A1A1A] border-b-2 border-[#1A1A1A] pb-1 hover:text-[#34B4FF] hover:border-[#34B4FF] transition-colors duration-300 group">
                   Our Products

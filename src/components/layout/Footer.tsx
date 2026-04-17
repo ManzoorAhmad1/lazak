@@ -12,9 +12,9 @@ export const Footer = () => {
 
           {/* Brand */}
           <div className="space-y-5">
-             <img src="/black logo.png" alt="LAZAK" className="w-[120px] h-20 object-contain" />
+            <img src="/black logo.png" alt="LAZAK" className="w-[120px] h-20 object-contain" />
             <p className="text-white/40 text-sm leading-relaxed">
-              Kitchen and Home Essentials made for people who actually cook.
+              Premium Kitchen and Home Essentials for Passionate Home Cooks.
             </p>
             <div className="flex gap-3">
               {[
@@ -30,7 +30,7 @@ export const Footer = () => {
           </div>
 
           {/* Shop */}
-         
+
 
           {/* Company */}
           <div>
@@ -56,7 +56,7 @@ export const Footer = () => {
               <li>info@lazakcare.com</li>
               <li>+15613959535</li>
               <li className="pt-2 text-white/30 text-xs leading-relaxed">
-                Los Angeles, CA<br />United States
+                New York, USA
               </li>
             </ul>
           </div>
