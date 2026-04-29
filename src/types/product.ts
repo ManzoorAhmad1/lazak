@@ -22,6 +22,8 @@ export interface Product {
   hasFreeShipping?: boolean;
   fullDescription?: string;
   tier?: 'budget' | 'standard' | 'premium';
+  images?: string[];
+  video?: string;
 }
 
 export interface Category {

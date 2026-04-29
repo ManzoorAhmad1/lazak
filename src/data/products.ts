@@ -2,6 +2,7 @@ import { Product, BlogArticle, Category } from '../types/product';
 
 export const CATEGORIES: Category[] = [
   { id: 'c1', slug: 'dish-drying-mat', name: 'Dish Drying mat', icon: 'Grid', image: '/lazak dry dish mat-2.png' },
+  { id: 'c2', slug: 'self-storage-pot-brush', name: 'Self Storage Pot Brush', icon: 'Grid', image: '/product2/Main-IMage-(1)-(1).png' },
 ];
 
 export const PRODUCTS: Product[] = [
@@ -11,6 +12,7 @@ export const PRODUCTS: Product[] = [
     slug: 'lazak-foldable-dish-drying-mat-standard',
     title: 'LAZAK Foldable Dish Drying Mat',
     price: 29.99,
+    video: '/Dish Dry matt (1).mp4',
     description: 'Maximize your kitchen space with this innovative dish drying rack, designed for both efficiency and convenience. Its foldable design allows for easy storage when not in use, while the durable and non-slip base ensures stability, even with a full load. Enjoy quick drying and reliable performance every time.',
     fullDescription: 'The LAZAK Foldable Dish Drying Mat brings smart design to your sink routine. Its open-slat aluminum frame lets air circulate freely so dishes dry faster without pooling water underneath.\n\nBuilt from food-grade aluminum alloy, it handles daily use without rusting, warping, or bending. When you are done, it folds flat for a drawer or hangs on a hook.\n\nIncludes silicone anti-slip feet and a small scrubbing pad.',
     image: '/lazak dry dish mat-2.png',
@@ -55,6 +57,29 @@ export const PRODUCTS: Product[] = [
     deliveryInfo: 'Ships in 1-2 business days.',
     tier: 'premium',
     hasFreeShipping: true
+  },
+  // Self Storage Pot Brush
+  {
+    id: 'pot-brush-1',
+    slug: 'lazak-self-storage-pot-brush-1',
+    title: 'Self Storage Pot Brush',
+    price: 19.99,
+    description: '',
+    image: '/product2/Main-IMage-(1)-(1).png',
+    images: [
+      '/product2/Main-IMage-(1)-(1).png',
+      '/product2/1 (2).png',
+      '/product2/2.png',
+      '/product2/4 (2).png',
+      '/product2/6 (1).png',
+    ],
+    rating: 4.7,
+    reviews: 56,
+    categories: ['self-storage-pot-brush'],
+    features: ['Self-Storing Design', 'Deep Bristles', 'Ergonomic Handle', 'Easy Clean'],
+    stock: 250,
+    deliveryInfo: 'Ships in 2-3 business days.',
+    tier: 'standard',
   },
 
 

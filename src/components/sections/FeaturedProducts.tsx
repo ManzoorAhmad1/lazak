@@ -3,6 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { PRODUCTS } from '@/data/products';
 import { ProductCard } from '@/components/ui/ProductCard';
+import { VideoCard } from '@/components/ui/VideoCard';
 import Link from 'next/link';
 import { HiArrowRight } from 'react-icons/hi2';
 
@@ -27,9 +28,22 @@ export const FeaturedProducts = () => {
           </Link>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {featured.map((product, i) => (
-            <ProductCard key={product.id} product={product} index={i} />
-          ))}
+          {featured.flatMap((product, i) => {
+            const hasImages = product.images && product.images.length > 0;
+            const isImageOnly = hasImages && !product.description?.trim();
+            const videoCards = product.video
+              ? [<VideoCard key={`${product.id}-video`} src={product.video} index={i} />]
+              : [];
+            if (isImageOnly) {
+              return [
+                ...videoCards,
+                ...product.images!.map((img, imgIdx) => (
+                  <ProductCard key={`${product.id}-img-${imgIdx}`} product={product} imageOverride={img} index={i + imgIdx} />
+                )),
+              ];
+            }
+            return [...videoCards, <ProductCard key={product.id} product={product} index={i} />];
+          })}
         </div>
       </div>
     </section>

@@ -4,6 +4,7 @@ import { useSearchParams, useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { PRODUCTS, CATEGORIES } from '@/data/products';
 import { ProductCard } from '@/components/ui/ProductCard';
+import { VideoCard } from '@/components/ui/VideoCard';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 import { HiMagnifyingGlass } from 'react-icons/hi2';
@@ -81,7 +82,22 @@ function ProductsContent() {
             </div>
             {displayedProducts.length > 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
-                {displayedProducts.map((product, index) => <ProductCard key={product.id} product={product} index={index} />)}
+                {displayedProducts.flatMap((product, index) => {
+                  const hasImages = product.images && product.images.length > 0;
+                  const isImageOnly = hasImages && !product.description?.trim();
+                  const videoCards = product.video
+                    ? [<VideoCard key={`${product.id}-video`} src={product.video} index={index} />]
+                    : [];
+                  if (isImageOnly) {
+                    return [
+                      ...videoCards,
+                      ...product.images!.map((img, imgIdx) => (
+                        <ProductCard key={`${product.id}-img-${imgIdx}`} product={product} imageOverride={img} index={index + imgIdx} />
+                      )),
+                    ];
+                  }
+                  return [...videoCards, <ProductCard key={product.id} product={product} index={index} />];
+                })}
               </div>
             ) : (
               <div className="text-center py-20 space-y-4">
