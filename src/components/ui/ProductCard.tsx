@@ -26,11 +26,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, index = 0, im
       className="group flex flex-col bg-white relative h-full border border-gray-200 rounded-[18px] shadow-md overflow-hidden hover:shadow-xl transition-all duration-300"
     >
       {/* Image */}
-      <div className="relative bg-[#F5F5F3] overflow-hidden">
+      <div className={`relative bg-[#F5F5F3] overflow-hidden ${imageOnly ? 'aspect-square' : ''}`}>
         <img
           src={src}
           alt={product.title}
-          className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-105"
+          className={`transition-transform duration-500 group-hover:scale-105 ${imageOnly ? 'absolute inset-0 w-full h-full object-contain' : 'w-full h-auto object-contain'}`}
         />
       </div>
 
