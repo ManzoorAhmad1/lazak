@@ -81,6 +81,41 @@ function ProductsContent() {
               </div>
             </div>
             {displayedProducts.length > 0 ? (
+              selectedCategory === 'all' && !searchQuery ? (
+                <div className="space-y-16">
+                  {CATEGORIES.map(cat => {
+                    const catProducts = filteredProducts.filter(p => p.categories.includes(cat.slug));
+                    if (catProducts.length === 0) return null;
+                    const catCards = catProducts.flatMap((product, index) => {
+                      const hasImages = product.images && product.images.length > 0;
+                      const isImageOnly = hasImages && !product.description?.trim();
+                      const videoCards = product.video
+                        ? [<VideoCard key={`${product.id}-video`} src={product.video} index={index} />]
+                        : [];
+                      if (isImageOnly) {
+                        return [
+                          ...videoCards,
+                          ...product.images!.map((img, imgIdx) => (
+                            <ProductCard key={`${product.id}-img-${imgIdx}`} product={product} imageOverride={img} index={index + imgIdx} />
+                          )),
+                        ];
+                      }
+                      return [...videoCards, <ProductCard key={product.id} product={product} index={index} />];
+                    });
+                    return (
+                      <div key={cat.id} className="space-y-6">
+                        <div className="flex items-center gap-4">
+                          <h2 className="text-xl font-bold text-gray-900 whitespace-nowrap">{cat.name}</h2>
+                          <div className="flex-1 h-px bg-gray-300" />
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
+                          {catCards}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
                 {displayedProducts.flatMap((product, index) => {
                   const hasImages = product.images && product.images.length > 0;
@@ -99,6 +134,7 @@ function ProductsContent() {
                   return [...videoCards, <ProductCard key={product.id} product={product} index={index} />];
                 })}
               </div>
+              )
             ) : (
               <div className="text-center py-20 space-y-4">
                 <div className="w-20 h-20 bg-muted/10 rounded-full flex items-center justify-center mx-auto text-muted"><HiMagnifyingGlass className="w-10 h-10" /></div>

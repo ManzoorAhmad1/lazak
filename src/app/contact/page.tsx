@@ -18,7 +18,7 @@ export default function ContactPage() {
   ];
   const contactItems = [
     { icon: HiEnvelope, title: 'Email Us', content: ['info@lazakcare.com'], color: 'primary' },
-    { icon: HiPhone, title: 'Call Us', content: ['+15163959535'], color: 'secondary' },
+    { icon: HiPhone, title: 'Call Us', content: ['+1 516 3959 535'], color: 'secondary' },
     { icon: HiMapPin, title: 'Based In', content: ['New York, USA'], color: 'accent' },
     { icon: HiClock, title: 'Response Time', content: ['Under 2 hours', 'During business hours'], color: 'muted' }
   ];

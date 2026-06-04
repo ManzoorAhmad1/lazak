@@ -54,7 +54,7 @@ export const Footer = () => {
             <h4 className="text-[10px] font-bold uppercase tracking-[0.25em] text-white/35 mb-5">Contact</h4>
             <ul className="space-y-3 text-white/55 text-sm">
               <li>info@lazakcare.com</li>
-              <li>+15613959535</li>
+              <li>+1 516 3959 535</li>
               <li className="pt-2 text-white/30 text-xs leading-relaxed">
                 New York, USA
               </li>
