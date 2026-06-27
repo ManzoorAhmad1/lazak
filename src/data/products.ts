@@ -5,7 +5,7 @@ export const CATEGORIES: Category[] = [
   { id: 'c2', slug: 'self-storage-pot-brush', name: 'Self Storage Pot Brush', icon: 'Grid', image: '/product2/Main-IMage-(1)-(1).png' },
   { id: 'c3', slug: 'bbq-meat-pack', name: 'BBQ Meat Pack', icon: 'Grid', image: '/BBQ MEAT PACK/BBQ-Meat-Pack-ZA-1.png' },
   { id: 'c4', slug: 'pan-cake-dispenser', name: 'Pan cake dispenser', icon: 'Grid', image: '/Pan cake dispenser/WhatsApp Image 2026-03-20 at 09.19.56.jpeg' },
-  { id: 'c5', slug: 'bulk-order-collection', name: 'Bulk Order Collection', icon: 'Grid', image: '/bulkImages/1.png' },
+  { id: 'c5', slug: 'Bulk Supply & Wholesale Services', name: 'Bulk Supply & Wholesale Services', icon: 'Grid', image: '/bulkImages/1.png' },
   // { id: 'c5', slug: 'silicon-bowl-liner', name: 'Silicon Bowl Liner', icon: 'Grid', image: '/Silicon Bowl Liner/1.jpeg' },
 ];
 
@@ -260,7 +260,7 @@ export const PRODUCTS: Product[] = [
     tier: 'standard',
   },
 
-  // Bulk Order Collection
+  // Bulk Supply & Wholesale Services
   {
     id: 'bulk-order-intro',
     slug: 'lazak-bulk-order-collection',
