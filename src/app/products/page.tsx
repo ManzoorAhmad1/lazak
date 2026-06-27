@@ -48,6 +48,16 @@ function ProductsContent() {
     return filteredProducts; // Yeh bhi saare products show karega for other categories
   }, [filteredProducts, selectedCategory, searchQuery]);
 
+  // Category description mapping
+  const categoryDescriptions: Record<string, string> = {
+    'Bulk Supply & Wholesale Services': `At LazakCare, we proudly serve as a trusted bulk supplier and wholesale partner for a wide range of premium kitchen essentials and household products. Every product featured on our website is available for wholesale orders at competitive prices, subject to mutually agreed terms and conditions. We ensure reliable product quality, efficient procurement, and timely delivery for retailers, distributors, and businesses worldwide. Contact our team today to discuss your wholesale requirements and receive a customized quotation tailored to your business needs.`,
+  };
+
+  // Get current category name
+  const currentCategory = CATEGORIES.find(cat => cat.slug === selectedCategory);
+  const categoryName = currentCategory?.name || '';
+  const categoryDescription = categoryDescriptions[categoryName] || '';
+
   const sectionVariants = { initial: { opacity: 0, y: 40 }, whileInView: { opacity: 1, y: 0 }, transition: { duration: 0.8, ease: 'easeOut' as const } };
 
   return (
@@ -80,12 +90,30 @@ function ProductsContent() {
                
               </div>
             </div>
+
+            {/* Category Description - Shows only when Bulk Supply category is selected */}
+            {selectedCategory !== 'all' && categoryDescription && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4 }}
+                className="bg-primary/5 p-6 rounded-2xl border border-primary/10"
+              >
+                <h2 className="text-xl font-bold text-gray-900 mb-3">{categoryName}</h2>
+                <p className="text-gray-700 text-sm leading-relaxed">{categoryDescription}</p>
+              </motion.div>
+            )}
+
             {displayedProducts.length > 0 ? (
               selectedCategory === 'all' && !searchQuery ? (
                 <div className="space-y-16">
                   {CATEGORIES.map(cat => {
                     const catProducts = filteredProducts.filter(p => p.categories.includes(cat.slug));
                     if (catProducts.length === 0) return null;
+                    
+                    // Check if this category has a description
+                    const catDescription = categoryDescriptions[cat.name] || '';
+                    
                     const catCards = catProducts.flatMap((product, index) => {
                       const hasImages = product.images && product.images.length > 0;
                       const isImageOnly = hasImages && !product.description?.trim();
@@ -108,6 +136,17 @@ function ProductsContent() {
                           <h2 className="text-xl font-bold text-gray-900 whitespace-nowrap">{cat.name}</h2>
                           <div className="flex-1 h-px bg-gray-300" />
                         </div>
+                        {/* Category description for Bulk Supply in All Products view */}
+                        {catDescription && (
+                          <motion.div
+                            initial={{ opacity: 0, y: -10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.4 }}
+                            className="bg-primary/5 p-6 rounded-2xl border border-primary/10"
+                          >
+                            <p className="text-gray-700 text-sm leading-relaxed">{catDescription}</p>
+                          </motion.div>
+                        )}
                         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
                           {catCards}
                         </div>
