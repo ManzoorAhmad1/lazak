@@ -185,7 +185,7 @@ export const PRODUCTS: Product[] = [
   // Pan cake dispenser
   {
     id: 'pancake-2',
-    slug: 'lazak-pan-cake-dispenser-no-drip',
+    slug: 'Bulk Supply & Wholesale Services',
     title: 'No-Drip Valve & Mess-Free Pouring',
     price: 24.99,
     video: '/Pan cake dispenser/pan cake dispenser.mp4',
@@ -201,7 +201,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'pancake-3',
-    slug: 'lazak-pan-cake-dispenser-durable',
+    slug: 'Bulk Supply & Wholesale Services',
     title: 'Durable Material & Food-Grade Safe',
     price: 24.99,
     description: 'DURABLE MATERIAL & FOOD-GRADE SAFE — This pancake maker dispenser is constructed from high-quality BPA-free transparent plastic that is safe for direct contact with food and suitable for everyday baking use. The sturdy clear body resists cracking and staining while maintaining visibility of batter levels during use. Designed for long-term kitchen performance without warping or discoloration over time.',
@@ -216,7 +216,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'pancake-4',
-    slug: 'lazak-pan-cake-dispenser-lid',
+    slug: 'Bulk Supply & Wholesale Services',
     title: 'Secure Lid & Easy to Clean',
     price: 24.99,
     description: 'SECURE LID & EASY TO CLEAN — This batter dispenser with lid includes a tight-fitting cover that keeps batter fresh and protected during refrigerator storage between uses. The smooth interior surface and wide opening make this pancake batter jug easy to rinse and clean by hand after every use. Reduces food waste by allowing you to store leftover batter conveniently in the same container.',
@@ -231,7 +231,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'pancake-5',
-    slug: 'lazak-pan-cake-dispenser-compact',
+    slug: 'Bulk Supply & Wholesale Services',
     title: 'Compact Size & Ergonomic Handle',
     price: 24.99,
     description: 'COMPACT SIZE & ERGONOMIC HANDLE DESIGN — This 900ml pancake dispenser measures 19cm in height and 17cm in width and weighs only 231g for lightweight and comfortable everyday kitchen use. The ergonomic non-slip handle provides a firm and comfortable grip during pouring for better control and accuracy. Easy to store in any kitchen cabinet or refrigerator without taking extra space.',
@@ -270,7 +270,7 @@ export const PRODUCTS: Product[] = [
     image: '/bulkImages/10.png',
     rating: 4.7,
     reviews: 41,
-    categories: ['bulk-order-collection'],
+    categories: ['Bulk Supply & Wholesale Services'],
     features: ['Bulk Quantity Support', 'Reliable Quality', 'Wholesale Friendly', 'Simple Ordering Process'],
     stock: 600,
     deliveryInfo: 'Bulk orders ship in 3-7 business days based on quantity.',
@@ -342,7 +342,7 @@ export const PRODUCTS: Product[] = [
     ],
     rating: 4.7,
     reviews: 41,
-    categories: ['bulk-order-collection'],
+    categories: ['Bulk Supply & Wholesale Services'],
     features: ['Complete Bulk Gallery', 'Image-Wise Selection', 'Large Quantity Ready', 'Flexible Supply Options'],
     stock: 600,
     deliveryInfo: 'Bulk orders ship in 3-7 business days based on quantity.',
